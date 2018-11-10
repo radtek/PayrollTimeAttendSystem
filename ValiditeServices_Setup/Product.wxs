@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+      xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+
+  <Product Id="{42633052-FB2B-4758-A22C-6F36EECD8A2F}" UpgradeCode="{9336E341-DF97-4816-9375-1C19ABAC3DAF}" Version="1.0.0.0" Language="1033" Name="Validite Services" Manufacturer="Validite">
+    <Package InstallerVersion="300" Compressed="yes" InstallScope="perMachine"/>
+    <Media Id="1" Cabinet="myapplication.cab" EmbedCab="yes" />
+   
+    <!-- Check that Framework 4.5 is Installed -->
+    <PropertyRef Id="NETFRAMEWORK45"/>
+    <Condition Message="This application requires .NET Framework 4.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR (NETFRAMEWORK45)]]>
+    </Condition>
+
+    <!-- Add UI to your installer -->
+    <UI Id="WixUI_Minimal">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="Minimal" />
+
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+
+      <!-- This is the welcome dialog you specified-->
+      <DialogRef Id="WelcomeDlg" />
+
+      <!-- Hook the new welcome dialog to the next one in the stack-->
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="PrepareDlg">1</Publish>
+
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+
+      <Property Id="ARPNOMODIFY" Value="1" />
+    </UI>
+
+    <UIRef Id="WixUI_Common" />
+
+    <!-- Install Procedure to Use PortSetup.exe to Setup PORT in Windows Firewall Inbound Rules -->
+    <Binary Id="PortSetup.exe" SourceFile="..\_OtherLive Files\PortSetup.exe" />
+  
+    <!-- Step 1: Define the directory structure NB Name Holds The New Directory Name -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+
+      <Directory Id="DesktopFolder"  SourceName="Desktop"/>
+      <Directory Id="ProgramMenuFolder"  SourceName="ApplicationProgramsFolder"/>
+            
+      <Directory Id="ProgramFilesFolder" >
+        
+        <Directory Id="InteractSoftware" Name="Validite">
+          
+          <Directory Id="APPLICATIONROOTDIRECTORY" Name="Validite Services">
+            
+            <Component Id="InstalledDirectory" Guid="{1DD98D1E-24E2-4E6C-8DD9-1CE7A293777B}">
+              <CreateFolder Directory="APPLICATIONROOTDIRECTORY">
+                <Permission User="Everyone" GenericAll="yes" />
+              </CreateFolder>
+              <RemoveFolder Id='APPLICATIONROOTDIRECTORY' On='uninstall' />
+            </Component>
+
+            <Component Id="busBackupRestoreClientDatabase.dll" Guid="">
+              <File Id="busBackupRestoreClientDatabase.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busBackupRestoreClientDatabase.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busClientConvertCostCentre.dll" Guid="">
+              <File Id="busClientConvertCostCentre.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busClientConvertCostCentre.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busClientDataDownload.dll" Guid="">
+            <File Id="busClientDataDownload.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busClientDataDownload.dll" KeyPath="yes" Checksum="yes"/>
+          </Component>
+
+          <Component Id="busClientDataUpload.dll" Guid="">
+            <File Id="busClientDataUpload.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busClientDataUpload.dll" KeyPath="yes" Checksum="yes"/>
+          </Component>
+
+            <Component Id="busClientPayrollLogon.dll" Guid="">
+            <File Id="busClientPayrollLogon.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busClientPayrollLogon.dll" KeyPath="yes" Checksum="yes"/>
+          </Component>
+
+          <Component Id="busClientTimeSheetDynamicUpload.dll" Guid="">
+            <File Id="busClientTimeSheetDynamicUpload.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busClientTimeSheetDynamicUpload.dll" KeyPath="yes" Checksum="yes"/>
+          </Component>
+
+           <Component Id="busClock.dll" Guid="">
+             <File Id="busClock.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busClock.dll" KeyPath="yes" Checksum="yes"/>
+           </Component>
+
+            <Component Id="busClockInBoundary.dll" Guid="">
+            <File Id="busClockInBoundary.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busClockInBoundary.dll" KeyPath="yes" Checksum="yes"/>
+          </Component>
+
+          <Component Id="busClockToEmployeeLink.dll" Guid="">
+            <File Id="busClockToEmployeeLink.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busClockToEmployeeLink.dll" KeyPath="yes" Checksum="yes"/>
+          </Component>
+
+            <Component Id="busEmployeeClient.dll" Guid="">
+              <File Id="busEmployeeClient.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busEmployeeClient.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busEmployeeGroup.dll" Guid="">
+              <File Id="busEmployeeGroup.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busEmployeeGroup.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busEmployeeLinkDevice.dll" Guid="">
+              <File Id="busEmployeeLinkDevice.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busEmployeeLinkDevice.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busEmployeeOverride.dll" Guid="">
+              <File Id="busEmployeeOverride.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busEmployeeOverride.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busRemotBackupSiteName.dll" Guid="">
+              <File Id="busRemotBackupSiteName.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busRemotBackupSiteName.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busTimeAttendanceLogon.dll" Guid="">
+              <File Id="busTimeAttendanceLogon.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busTimeAttendanceLogon.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busTimeAttendanceMain.dll" Guid="">
+              <File Id="busTimeAttendanceMain.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busTimeAttendanceMain.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busTimeSheetBatchClient.dll" Guid="">
+              <File Id="busTimeSheetBatchClient.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busTimeSheetBatchClient.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busTimeSheetClient.dll" Guid="">
+              <File Id="busTimeSheetClient.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busTimeSheetClient.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="busUserClient.dll" Guid="">
+              <File Id="busUserClient.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\busUserClient.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="clsDBConnectionObjects.dll" Guid="">
+              <File Id="clsDBConnectionObjects.dll" Source="..\_PayrollLive Files\Server\GoingLive\clsDBConnectionObjects.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+            
+            <Component Id="clsFixInteractPayrollClientDatabase.dll" Guid="">
+              <File Id="clsFixInteractPayrollClientDatabase.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\clsFixInteractPayrollClientDatabase.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="DPUruNet.dll" Guid="">
+              <File Id="DPUruNet.dll" Source="..\_OtherLive Files\DPUruNet.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="DPCtlUruNet.dll" Guid="">
+              <File Id="DPCtlUruNet.dll" Source="..\_OtherLive Files\DPCtlUruNet.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="FingerPrintClockService.dll" Guid="">
+              <File Id="FingerPrintClockService.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\FingerPrintClockService.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+          
+            <Component Id="FingerPrintClockServiceStartStop.dll" Guid="">
+              <File Id="FingerPrintClockServiceStartStop.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\FingerPrintClockServiceStartStop.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+         
+            <!-- Windows Service Setup for FingerPrint Clock and TimeAttendance Service -->
+            <Component Id="FingerPrintClockTimeAttendanceService.exe" Guid="">
+              <File Id="FingerPrintClockTimeAttendanceService.exe" Source="..\_OtherLive Files\FingerPrintClockTimeAttendanceService.exe" KeyPath="yes" Checksum="yes"/>
+              <ServiceInstall
+              Id="ServiceInstaller"
+              Type="ownProcess"
+              Name="FingerPrintClockTimeAttendanceService"
+              DisplayName="FingerPrint Clock and TimeAttendance Service"
+              Description="Runs Fingerprint Clock and Time and Attendance (Validite)"
+              Start="auto"
+              Account="[SERVICEACCOUNT]"
+              Password="[SERVICEPASSWORD]"
+              ErrorControl="normal"
+              Arguments=" /start FingerPrintClockTimeAttendanceWindowsService"  />
+              <ServiceControl Id="StartService" Start="install" Stop="both" Remove="uninstall" Name="FingerPrintClockTimeAttendanceService" Wait="yes" />
+            </Component>
+
+            <!-- Windows Service Setup for FingerPrint Clock and TimeAttendance Service -->
+            <Component Id="FingerPrintClockTimeAttendanceServiceStartStop.exe" Guid="{5D956B77-CAEC-4D87-B21C-3C9521CA1D42}">
+              <File Id="FingerPrintClockTimeAttendanceServiceStartStop.exe" Source="..\_OtherLive Files\FingerPrintClockTimeAttendanceServiceStartStop.exe" KeyPath="yes" Checksum="yes"/>
+              <ServiceInstall
+              Id="ServiceInstaller1"
+              Type="ownProcess"
+              Name="FingerPrintClockTimeAttendanceServiceStartStop"
+              DisplayName="FingerPrint Clock and TimeAttendance Restart Service"
+              Description="Restarts Fingerprint Clock and Time and Attendance (Validite)"
+              Start="auto"
+              Account="[SERVICEACCOUNT]"
+              Password="[SERVICEPASSWORD]"
+              ErrorControl="normal"
+              Arguments=" /start FingerPrintClockTimeAttendanceServiceStartStop"  />
+              <ServiceControl Id="StartService1" Start="install" Stop="both" Remove="uninstall" Name="FingerPrintClockTimeAttendanceServiceStartStop" Wait="yes" />
+            </Component>
+
+            <Component Id="TestFingerPrintClockTimeAttendanceService.txt" Guid="{06B740E7-637D-4FF8-829F-067F13C7D7DA}">
+              <File Id="TestFingerPrintClockTimeAttendanceService.txt" Source="..\_OtherLive Files\TestFingerPrintClockTimeAttendanceService.txt" KeyPath="yes" Checksum="yes"/>
+            </Component>
+            
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  
+    <!-- Step 2: Tell WiX to install the files -->
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+
+      <ComponentRef Id="busBackupRestoreClientDatabase.dll" />
+      <ComponentRef Id="busClientConvertCostCentre.dll" />
+      <ComponentRef Id="busClientDataDownload.dll" />
+      <ComponentRef Id="busClientDataUpload.dll" />
+      <ComponentRef Id="busClientPayrollLogon.dll" />
+      <ComponentRef Id="busClientTimeSheetDynamicUpload.dll" />
+      <ComponentRef Id="busClock.dll" />
+      <ComponentRef Id="busClockInBoundary.dll" />
+      <ComponentRef Id="busClockToEmployeeLink.dll" />
+
+      <ComponentRef Id="busEmployeeClient.dll" />
+      <ComponentRef Id="busEmployeeGroup.dll" />
+      <ComponentRef Id="busEmployeeLinkDevice.dll" />
+      <ComponentRef Id="busEmployeeOverride.dll" />
+
+      <ComponentRef Id="busRemotBackupSiteName.dll" />
+
+      <ComponentRef Id="busTimeAttendanceLogon.dll" />
+      <ComponentRef Id="busTimeAttendanceMain.dll" />
+      <ComponentRef Id="busTimeSheetBatchClient.dll" />
+      <ComponentRef Id="busTimeSheetClient.dll" />
+
+      <ComponentRef Id="busUserClient.dll" />
+
+      <ComponentRef Id="clsDBConnectionObjects.dll" />
+      <ComponentRef Id="clsFixInteractPayrollClientDatabase.dll" />
+
+      <ComponentRef Id="DPCtlUruNet.dll" />
+      <ComponentRef Id="DPUruNet.dll" />
+
+      <ComponentRef Id="FingerPrintClockService.dll" />
+      <ComponentRef Id="FingerPrintClockServiceStartStop.dll" />
+      <ComponentRef Id="FingerPrintClockTimeAttendanceService.exe" />
+      <ComponentRef Id="FingerPrintClockTimeAttendanceServiceStartStop.exe" />
+     
+      <ComponentRef Id="TestFingerPrintClockTimeAttendanceService.txt" />
+      
+    </Feature>
+
+    <!-- Grant Read / Write Permission to Created Directory -->
+    <Feature Id="FolderPermissions" Title="InstallerDirectoryPermissions" Level="1">
+      <ComponentRef Id="InstalledDirectory" />
+    
+    </Feature>
+
+    <!-- Run PortSetup.exe to Setup PORT in Windows Firewall Inbound Rules -->
+    <CustomAction Id="SetupPort" BinaryKey="PortSetup.exe" ExeCommand="" Execute='deferred' Return='asyncNoWait' Impersonate='no'/>
+  
+    <InstallExecuteSequence>
+      <Custom Action="SetupPort" Before="InstallFinalize"><![CDATA[NOT Installed]]></Custom>
+     </InstallExecuteSequence>
+
+  </Product>
+</Wix>

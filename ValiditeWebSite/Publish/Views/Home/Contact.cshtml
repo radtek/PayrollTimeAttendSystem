@@ -1,0 +1,392 @@
+﻿@model ValiditeWebSite.Models.Contact
+@{
+    ViewData["Title"] = "Contact Time Attendance Biometrics Fingerprint Wages Salaries Payroll Validite";
+    ViewData["PageTitle"] = "Contact";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    //Panel Left
+    <div class="col-md-6">
+
+        <div class="panel panel-default ">
+            <div class="panel-heading">Company Details</div>
+            <div class="panel-body">
+
+                <div class="col-md-8">
+
+
+                    <div class="row no-pad">
+                        <div class="col-md-6">
+                            <img src="~/Image/validite.png"
+                                    class="img-responsive" alt="Awesome.jpg">
+                        </div>
+                    </div>
+
+                    <h4>
+                        1st Floor<br />272 Oak Ave<br />Ferndale<br />Randburg<br />2194
+                    </h4>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+
+                </div>
+
+
+                <div id="pano" style="width: 510px; height: 260px"></div>
+
+                <br />
+
+
+                <div id="dvMap" style="width: 510px; height: 300px">
+
+                </div>
+
+             
+
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpsVzwPSNrdbjNw42Y-cq4I4hkf-dfqXA"></script>
+                <script type="text/javascript">
+                    var markers = @Html.Raw(ViewBag.Markers);
+                    window.onload = function () {
+                        var mapOptions = {
+                            center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                            zoom: 11,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        var infoWindow = new google.maps.InfoWindow();
+                        var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+                        for (i = 0; i < markers.length; i++) {
+                            var data = markers[i]
+                            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                            var marker = new google.maps.Marker({
+                                position: myLatlng,
+                                map: map,
+                                title: data.title
+                            });
+                            (function (marker, data) {
+                                google.maps.event.addListener(marker, "click", function (e) {
+                                    infoWindow.setContent(data.description);
+                                    infoWindow.open(map, marker);
+                                });
+                            })(marker, data);
+                        }
+
+                        var panorama = new google.maps.StreetViewPanorama(
+                        document.getElementById('pano'), {
+                            position:  new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                            pov: {
+                                heading: 34 + 246,
+                                pitch: 2,zoom: 1
+                            }
+                        });
+                        map.setStreetView(panorama);
+                }
+                </script>
+                  
+            </div>
+        </div>
+
+    </div>
+    
+    //Panel Right
+    <div class="col-md-6">
+
+        <div class="panel panel-default ">
+            <div class="panel-heading">Contact</div>
+            <div class="panel-body">
+
+                <div class="col-md-12">
+
+                    <div class="row">
+
+                        <h3><i>Contact Numbers</i></h3>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <h4>@Model.ContactPerson1</h4>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <h4> <span class="glyphicon glyphicon-bold glyphicon-phone"></span> @Model.ContactPerson1Phone</h4>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <h4>@Model.ContactPerson2</h4>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                @if (@Model.ContactPerson2Phone != "")
+                                {
+                                    <h4> <span class="glyphicon glyphicon-bold glyphicon-phone"></span> @Model.ContactPerson2Phone</h4>
+                                }
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <h4>@Model.ContactPerson3</h4>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                @if (@Model.ContactPerson3Phone != "")
+                                {
+                                    <h4> <span class="glyphicon glyphicon-bold glyphicon-phone"></span> @Model.ContactPerson3Phone</h4>
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <h3><i>Contact Us</i></h3>
+
+                    </div>
+
+                    <div class="col-md-6">
+                    </div>
+
+                </div>
+
+                <br />
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p class="fieldtitle">First Name</p>
+
+                        <div class="form-group form-inline">
+
+                            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control req", id = "FirstName", value = "@Model.FirstName", maxlength = "30" })
+                            <img class="Asterisk" hidden="hidden" src="~/Image/Asterisk.png" alt="Image" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p class="fieldtitle">Last Name</p>
+
+                        <div class="form-group form-inline">
+
+                            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control req", id = "LastName", value = "@Model.LastName", maxlength = "30" })
+
+                            <img class="Asterisk" hidden="hidden" src="~/Image/Asterisk.png" alt="Image" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p class="fieldtitle">Company Name</p>
+
+                        <div class="form-group">
+
+                            @Html.TextBoxFor(m => m.CompanyName, new { @class = "form-control ", id = "CompanyName", value = "@Model.CompanyName", maxlength = "30" })
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <p class="fieldtitle">Email</p>
+
+                        <div class="form-group form-inline">
+
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control req", id = "Email", value = "@Model.Email", maxlength = "30" })
+
+                            <img class="Asterisk" hidden="hidden" src="~/Image/Asterisk.png" alt="Image" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+
+                    <div class="col-md-12">
+
+                        <p class="fieldtitle">Comment</p>
+
+                        <div class="form-group form-inline">
+
+                            @Html.TextAreaFor(m => m.Comment, new { @class = "form-control req", id = "Comment", value = "@Model.Comment", maxlength = "300", style = "width: 800px; height: 120px;" })
+
+                            <img class="Asterisk" hidden="hidden" src="~/Image/Asterisk.png" alt="Image" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-3">
+
+                        <div class="form-group">
+
+                            <button class="btn btn-sml btn-primary saveform" type="submit">
+                                Submit
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                    </div>
+
+
+                    <div class="col-md-6">
+
+
+
+                        <div class="form-inline">
+                            <img src="~/Image/Asterisk.png" alt="Image" />
+                            means mandatory fields
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="row">
+
+
+                    <div class="col-md-7">
+
+                        <div class="form-group">
+
+                            @if (Model.ReturnMessage != null)
+                            {
+                                if (Model.ReturnMessage.IndexOf("Error") > -1)
+                                {
+                                    <div class="alert alert-danger fade in col-md-12">
+                                        <strong>@Model.ReturnMessage</strong>
+                                    </div>
+                                }
+                                else
+                                {
+                                    if (Model.ReturnMessage.IndexOf("Success") > -1)
+                                    {
+                                        <div class="alert alert-success fade in col-md-12">
+                                            <strong>@Model.ReturnMessage</strong>
+                                        </div>
+                                    }
+                                }
+                            }
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+  
+}
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+        $(".saveform").click(function () {
+
+            $(".req").each(function () {
+
+                var content = $(this).val().trim();
+
+                if (content == "") {
+                    var fieldTitle = $(this).parent().prev('.fieldtitle').text();
+                    if (fieldTitle != "") {
+                        this.setCustomValidity(fieldTitle + " Required");
+                        this.reportValidity();
+                        return false;
+                    }
+                }
+            });
+        });
+
+        //On Load of Form
+        $(".req").each(function () {
+            var content = $(this).val().trim();
+            var $asterisk = $(this).next(".Asterisk");
+
+            asteriskShow(content, $asterisk);
+        });
+
+        //Value Change
+        jQuery('.req').on('input', function () {
+            this.setCustomValidity("");
+            var content = $(this).val().trim();
+            var $asterisk = $(this).next(".Asterisk");
+
+            asteriskShow(content, $asterisk);
+        });
+
+
+        //This Function Shows the Asterisk for Mandatory Fields (Defined in Higher Functions)
+        function asteriskShow(content1, $asterisk1) {
+            if (content1 == "")
+                $asterisk1.show();
+            else
+                $asterisk1.hide();
+        }
+
+    </script>
+}

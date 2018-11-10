@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <system.serviceModel>
+    <services>
+      <service name="FingerPrintClockServer.FingerPrintClockService">
+        <endpoint binding="webHttpBinding" contract="FingerPrintClockServer.IFingerPrintClockService" bindingConfiguration="higherMessageSize_WS"/>
+      </service>
+    </services>
+    <bindings>
+      <webHttpBinding>
+        <binding name="higherMessageSize_WS" closeTimeout="00:01:00" openTimeout="00:01:00" transferMode="Streamed" receiveTimeout="00:01:00" sendTimeout="00:01:00" maxBufferPoolSize="66665536" maxBufferSize="66665536" maxReceivedMessageSize="66665536">
+          <security mode="None"/>
+          <readerQuotas maxArrayLength="100000000"/>
+        </binding>
+      </webHttpBinding>
+    </bindings>
+  </system.serviceModel>
+  <startup>
+    <supportedRuntime version="v2.0.50727"/>
+  </startup>
+</configuration>

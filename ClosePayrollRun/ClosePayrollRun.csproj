@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{505D39AE-44FC-4D78-B306-872C9411D02B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClosePayrollRun</RootNamespace>
+    <AssemblyName>ClosePayrollRun</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmClosePayrollRun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClosePayrollRun.Designer.cs">
+      <DependentUpon>frmClosePayrollRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecordsExcludedFromRun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecordsExcludedFromRun.Designer.cs">
+      <DependentUpon>frmRecordsExcludedFromRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmClosePayrollRun.resx">
+      <DependentUpon>frmClosePayrollRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordsExcludedFromRun.resx">
+      <DependentUpon>frmRecordsExcludedFromRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clsISUtilities\clsISUtilities.csproj">
+      <Project>{9641E261-EC6D-4333-81EE-885A3C2207F7}</Project>
+      <Name>clsISUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PayrollTotals48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClosePayroll32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetTotals48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account_book-error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cross48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClosePayroll48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tick48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-export.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

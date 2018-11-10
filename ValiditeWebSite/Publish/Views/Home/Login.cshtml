@@ -1,0 +1,170 @@
+﻿@model ValiditeWebSite.Models.User
+@{
+    ViewData["Title"] = "Login Time Attendance Biometrics Fingerprint Wages Salaries Payroll Validite";
+    ViewData["PageTitle"] = "Login";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <div class="panel panel-default ">
+                <div class="panel-heading">Login</div>
+                <div class="panel-body">
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                            <h2>Enter Login Details</h2>
+
+                        </div>
+
+                    </div>
+
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <p class="fieldtitle">User Id</p>
+
+                            <div class="form-group form-inline">
+
+                                @Html.TextBoxFor(m => m.UserId, new { @class = "form-control req", id = "UserName", value = @Model.UserId, maxlength = "15" ,style = "width:300px;" })
+                                <img class="Asterisk" hidden="hidden" src="~/Image/Asterisk.png" alt="Image" />
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <p class="fieldtitle">User Password</p>
+
+                            <div class="form-group form-inline">
+
+                                @Html.PasswordFor(m => m.UserPassword, new { @class = "form-control req", id = "UserPassword", value = @Model.UserPassword, maxlength = "15",style = "width:150px;" })
+                                <img class="Asterisk" hidden="hidden" src="~/Image/Asterisk.png" alt="Image" />
+
+                            </div>
+
+                        </div>
+
+                        @*<div class="col-md-8">
+                        </div>*@
+
+                    </div>
+
+                    <br />
+
+                    <div class="row">
+
+                        <div class="col-md-2">
+
+                            <div class="form-group">
+
+                                <button class="btn btn-sml btn-primary saveform" type="submit">
+                                    Login
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <img src="~/Image/Asterisk.png" alt="Image" />
+                            means mandatory fields
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
+
+                            <div class="form-group">
+
+                                @if (Model.ReturnMessage != "")
+                                {
+                                    <br />
+
+                                    <div class="alert alert-danger fade in ">
+                                        <strong>@Model.ReturnMessage</strong>
+                                    </div>
+                                }
+
+                            </div>
+
+                        </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+
+    <script type="text/javascript">
+
+        $(".saveform").click(function () {
+
+            $(".req").each(function () {
+
+                var content = $(this).val().trim();
+
+                if (content == "") {
+                    var fieldTitle = $(this).parent().prev('.fieldtitle').text();
+                    if (fieldTitle != "") {
+                        this.setCustomValidity(fieldTitle + " Required");
+                        this.reportValidity();
+                        return false;
+                    }
+                }
+            });
+        });
+
+        //On Load of Form
+        $(".req").each(function () {
+            var content = $(this).val().trim();
+            var $asterisk = $(this).next(".Asterisk");
+
+            asteriskShow(content, $asterisk);
+        });
+
+        //Value Change
+        jQuery('.req').on('input', function () {
+            this.setCustomValidity("");
+            var content = $(this).val().trim();
+            var $asterisk = $(this).next(".Asterisk");
+
+            asteriskShow(content, $asterisk);
+        });
+
+
+        //This Function Shows the Asterisk for Mandatory Fields (Defined in Higher Functions)
+        function asteriskShow(content1, $asterisk1) {
+            if (content1 == "")
+                $asterisk1.show();
+            else
+                $asterisk1.hide();
+        }
+
+    </script>
+}
+
+
+

@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{348D1163-C901-41F8-811B-CF8B5229A29E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayrollMain</RootNamespace>
+    <AssemblyName>TimeAttendanceInternetMain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCloseOrSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCloseOrSave.Designer.cs">
+      <DependentUpon>frmCloseOrSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNotBusyWithRun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotBusyWithRun.Designer.cs">
+      <DependentUpon>frmNotBusyWithRun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRestartService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRestartService.Designer.cs">
+      <DependentUpon>frmRestartService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTimeAttendanceInternetMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimeAttendanceInternetMain.Designer.cs">
+      <DependentUpon>frmTimeAttendanceInternetMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCloseOrSave.resx">
+      <DependentUpon>frmCloseOrSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotBusyWithRun.resx">
+      <DependentUpon>frmNotBusyWithRun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRestartService.resx">
+      <DependentUpon>frmRestartService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimeAttendanceInternetMain.resx">
+      <DependentUpon>frmTimeAttendanceInternetMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clsISUtilities\clsISUtilities.csproj">
+      <Project>{9641E261-EC6D-4333-81EE-885A3C2207F7}</Project>
+      <Name>clsISUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DateLoad\DateLoad.csproj">
+      <Project>{CA3108F6-41C3-4204-8165-91A3552E9F91}</Project>
+      <Name>DateLoad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsISClientUtilities\clsISClientUtilities.csproj">
+      <Project>{7A57341C-01D4-41ED-B0B8-D356F2573354}</Project>
+      <Name>clsISClientUtilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Change.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Employee.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DateRun.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunTimeAttend.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetAnalysis.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WageRun.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DateRunClose.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheets.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetsBatch.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Umbrella.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clear.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClosePayroll16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClosePayroll24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leave16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leave24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenPayroll16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OpenPayroll24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PayrollTotals16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PayrollTotals24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timesheet16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timesheet24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetBatch16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetBatch24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunTimeAttendance16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RunTimeAttendance24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\globe48.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Globe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\company16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\company24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eFiling16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eFiling24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataDownload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataDownload24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataUpload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataUpload24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetTotals16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetTotals24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataDownloadUpload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataDownloadUpload24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataUploadTimeSheets16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataUploadTimeSheets24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Validite28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Validite28New.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

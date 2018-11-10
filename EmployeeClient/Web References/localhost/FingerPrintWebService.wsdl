@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Get_Template_And_Image">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bytRawImageArray" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="ShowBiometrics" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ShowMinutaiePoints" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytPreviousTemplate" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FingerPrintScore" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyScoreFingerprintsCompare" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytFingerImageByteArray" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Template_And_ImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bytPreviousTemplate" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FingerPrintScore" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyScoreFingerprintsCompare" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytFingerImageByteArray" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Show_New_Image">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bytRawImageArray" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="ShowBiometrics" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="ShowMinutaiePoints" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytPreviousTemplate" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytFingerImageByteArray" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Show_New_ImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bytFingerImageByteArray" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_User_And_Image">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bytUserDataTable" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytRawImageArray" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="FingerPrintScore" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytFingerImageByteArray" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FingerNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_User_And_ImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FingerPrintScore" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytFingerImageByteArray" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="UserNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="FingerNo" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Find_Employee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeviceNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PrevEmployeeCompanyNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Names" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeCompanyNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeCompanyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Find_EmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Names" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeCompanyNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeCompanyName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Find_Employee_Names">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bytRawImageArray" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="DeviceNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeSmartKeyNo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeRFIDNo" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Names" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Find_Employee_NamesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Names" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ping_Database">
+        <s:complexType />
+      </s:element>
+      <s:element name="Ping_DatabaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Ping_DatabaseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Get_Template_And_ImageSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Template_And_Image" />
+  </wsdl:message>
+  <wsdl:message name="Get_Template_And_ImageSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_Template_And_ImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="Show_New_ImageSoapIn">
+    <wsdl:part name="parameters" element="tns:Show_New_Image" />
+  </wsdl:message>
+  <wsdl:message name="Show_New_ImageSoapOut">
+    <wsdl:part name="parameters" element="tns:Show_New_ImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_User_And_ImageSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_User_And_Image" />
+  </wsdl:message>
+  <wsdl:message name="Get_User_And_ImageSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_User_And_ImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="Find_EmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:Find_Employee" />
+  </wsdl:message>
+  <wsdl:message name="Find_EmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:Find_EmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Find_Employee_NamesSoapIn">
+    <wsdl:part name="parameters" element="tns:Find_Employee_Names" />
+  </wsdl:message>
+  <wsdl:message name="Find_Employee_NamesSoapOut">
+    <wsdl:part name="parameters" element="tns:Find_Employee_NamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ping_DatabaseSoapIn">
+    <wsdl:part name="parameters" element="tns:Ping_Database" />
+  </wsdl:message>
+  <wsdl:message name="Ping_DatabaseSoapOut">
+    <wsdl:part name="parameters" element="tns:Ping_DatabaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FingerPrintWebServiceSoap">
+    <wsdl:operation name="Get_Template_And_Image">
+      <wsdl:input message="tns:Get_Template_And_ImageSoapIn" />
+      <wsdl:output message="tns:Get_Template_And_ImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Show_New_Image">
+      <wsdl:input message="tns:Show_New_ImageSoapIn" />
+      <wsdl:output message="tns:Show_New_ImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_User_And_Image">
+      <wsdl:input message="tns:Get_User_And_ImageSoapIn" />
+      <wsdl:output message="tns:Get_User_And_ImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Find_Employee">
+      <wsdl:input message="tns:Find_EmployeeSoapIn" />
+      <wsdl:output message="tns:Find_EmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Find_Employee_Names">
+      <wsdl:input message="tns:Find_Employee_NamesSoapIn" />
+      <wsdl:output message="tns:Find_Employee_NamesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping_Database">
+      <wsdl:input message="tns:Ping_DatabaseSoapIn" />
+      <wsdl:output message="tns:Ping_DatabaseSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FingerPrintWebServiceSoap" type="tns:FingerPrintWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_Template_And_Image">
+      <soap:operation soapAction="http://tempuri.org/Get_Template_And_Image" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Show_New_Image">
+      <soap:operation soapAction="http://tempuri.org/Show_New_Image" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_User_And_Image">
+      <soap:operation soapAction="http://tempuri.org/Get_User_And_Image" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find_Employee">
+      <soap:operation soapAction="http://tempuri.org/Find_Employee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find_Employee_Names">
+      <soap:operation soapAction="http://tempuri.org/Find_Employee_Names" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping_Database">
+      <soap:operation soapAction="http://tempuri.org/Ping_Database" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FingerPrintWebServiceSoap12" type="tns:FingerPrintWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_Template_And_Image">
+      <soap12:operation soapAction="http://tempuri.org/Get_Template_And_Image" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Show_New_Image">
+      <soap12:operation soapAction="http://tempuri.org/Show_New_Image" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_User_And_Image">
+      <soap12:operation soapAction="http://tempuri.org/Get_User_And_Image" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find_Employee">
+      <soap12:operation soapAction="http://tempuri.org/Find_Employee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find_Employee_Names">
+      <soap12:operation soapAction="http://tempuri.org/Find_Employee_Names" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping_Database">
+      <soap12:operation soapAction="http://tempuri.org/Ping_Database" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FingerPrintWebService">
+    <wsdl:port name="FingerPrintWebServiceSoap" binding="tns:FingerPrintWebServiceSoap">
+      <soap:address location="http://localhost/FingerPrintWebService/FingerPrintWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FingerPrintWebServiceSoap12" binding="tns:FingerPrintWebServiceSoap12">
+      <soap12:address location="http://localhost/FingerPrintWebService/FingerPrintWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

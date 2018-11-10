@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC107887-3CC4-40E9-B137-FDD5EADF2749}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InteractPayroll</RootNamespace>
+    <AssemblyName>TimeAttendanceEmployee</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DPCtlUruNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\DPCtlUruNet\1.0.0.0__7f32ef930fec5e5f\DPCtlUruNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DPUruNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Windows\assembly\GAC_MSIL\DPUruNet\1.0.0.0__7f32ef930fec5e5f\DPUruNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmTimeAttendanceEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimeAttendanceEmployee.Designer.cs">
+      <DependentUpon>frmTimeAttendanceEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmTimeAttendanceEmployee.resx">
+      <DependentUpon>frmTimeAttendanceEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clsISUtilities\clsISUtilities.csproj">
+      <Project>{9641E261-EC6D-4333-81EE-885A3C2207F7}</Project>
+      <Name>clsISUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsReadersToDp\clsReadersToDp.csproj">
+      <Project>{d4d63fb1-72f4-453f-8018-d99c58a75817}</Project>
+      <Name>clsReadersToDp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LIndexClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LIndexServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LMiddleClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LMiddleServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LPinkieClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LPinkieServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LRingClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LRingServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LThumbClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LThumbServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RIndexClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RIndexServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RMiddleClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RMiddleServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RPinkieClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RPinkieServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RRingClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RRingServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RThumbClear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RThumbServer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FingerPrint64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FingerPrintCorrect64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FingerPrintError64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FingerPrintQuestion64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewLock16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewLock48.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

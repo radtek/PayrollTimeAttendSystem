@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C70980D-ED06-479D-9913-D9303B08FF35}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InteractPayrollClient</RootNamespace>
+    <AssemblyName>TimeAttendanceClientIS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeAttendanceClientIS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackupRestoreClientDatabase\BackupRestoreClientDatabase.csproj">
+      <Project>{064fae38-4189-42bc-b999-14906fba880b}</Project>
+      <Name>BackupRestoreClientDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busBackupRestoreClientDatabase\busBackupRestoreClientDatabase.csproj">
+      <Project>{B4686D9A-B449-493A-B3EF-F303BF2AF621}</Project>
+      <Name>busBackupRestoreClientDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientConvertCostCentre\busClientConvertCostCentre.csproj">
+      <Project>{256A5179-4026-4935-B083-B0919D4910EA}</Project>
+      <Name>busClientConvertCostCentre</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientDataDownload\busClientDataDownload.csproj">
+      <Project>{38e52861-5721-46a6-9754-204f34e71da1}</Project>
+      <Name>busClientDataDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientDataUpload\busClientDataUpload.csproj">
+      <Project>{93F250D3-0FAD-4DEB-A118-0071844B2510}</Project>
+      <Name>busClientDataUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientPayrollLogon\busClientPayrollLogon.csproj">
+      <Project>{0f0f490b-b76f-4e97-b863-c4e505d5077b}</Project>
+      <Name>busClientPayrollLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClockInBoundary\busClockInBoundary.csproj">
+      <Project>{3F019F1D-0496-4C55-B6C8-44858037632F}</Project>
+      <Name>busClockInBoundary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClockToEmployeeLink\busClockToEmployeeLink.csproj">
+      <Project>{8547534A-7F29-46C0-8685-DBA0F30FE126}</Project>
+      <Name>busClockToEmployeeLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClock\busClock.csproj">
+      <Project>{8F0FCDCC-BB5A-4E57-8E1E-CDF8A43BC09C}</Project>
+      <Name>busClock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busConvertCostCentre\busConvertCostCentre.csproj">
+      <Project>{728b5cb9-2d34-423e-ab7b-4b19b7a25ec2}</Project>
+      <Name>busConvertCostCentre</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busDataDownload\busDataDownload.csproj">
+      <Project>{49bba33e-0b08-4679-876b-83111850b328}</Project>
+      <Name>busDataDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busDataUpload\busDataUpload.csproj">
+      <Project>{61f31560-785a-4fc0-9754-70e5aca06d00}</Project>
+      <Name>busDataUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeClient\busEmployeeClient.csproj">
+      <Project>{25BF0826-1F7F-4258-82A5-2EC6432D14D1}</Project>
+      <Name>busEmployeeClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeGroup\busEmployeeGroup.csproj">
+      <Project>{2dfb0075-394e-4bb6-b8eb-18e3c1fb6e11}</Project>
+      <Name>busEmployeeGroup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeLinkDevice\busEmployeeLinkDevice.csproj">
+      <Project>{A268DB73-6295-4682-8576-A36B10EC6725}</Project>
+      <Name>busEmployeeLinkDevice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeOverride\busEmployeeOverride.csproj">
+      <Project>{6E66E389-10E0-46D8-8C76-EFF1B2723773}</Project>
+      <Name>busEmployeeOverride</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busFileDownload\busFileDownload.csproj">
+      <Project>{d9c4b52c-9122-49b2-abee-55f8ab964aa4}</Project>
+      <Name>busFileDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busFileUpload\busFileUpload.csproj">
+      <Project>{a03595e6-674c-409b-98d2-78252e4a835e}</Project>
+      <Name>busFileUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPasswordChange\busPasswordChange.csproj">
+      <Project>{925ce865-94f2-4b88-bae5-0b4303eff8d2}</Project>
+      <Name>busPasswordChange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPayrollLogon\busPayrollLogon.csproj">
+      <Project>{7D64CA57-02BE-4CEC-8766-7BD1B53E8A2D}</Project>
+      <Name>busPayrollLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRemoteBackupSiteName\busRemoteBackupSiteName.csproj">
+      <Project>{1A68FED3-0D80-45ED-B4AC-CC49ECCE4BD2}</Project>
+      <Name>busRemoteBackupSiteName</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceLogon\busTimeAttendanceLogon.csproj">
+      <Project>{637F899E-8558-4F9A-B6CF-47203A0D867D}</Project>
+      <Name>busTimeAttendanceLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceMain\busTimeAttendanceMain.csproj">
+      <Project>{8AD3171E-C525-4668-A08B-73488F99A447}</Project>
+      <Name>busTimeAttendanceMain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeSheetBatchClient\busTimeSheetBatchClient.csproj">
+      <Project>{57DFE3EE-5B51-434D-B8B3-9BCA861013E2}</Project>
+      <Name>busTimeSheetBatchClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeSheetClient\busTimeSheetClient.csproj">
+      <Project>{82A69107-BAC8-4D73-B4CC-3D962BBE019C}</Project>
+      <Name>busTimeSheetClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busUserClient\busUserClient.csproj">
+      <Project>{420EA5CD-F23B-4392-9CB6-3B400D40EF19}</Project>
+      <Name>busUserClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChooseFingerprintReader\ChooseFingerprintReader.csproj">
+      <Project>{2cd39a5e-95f6-4271-83bc-5d898bf870e3}</Project>
+      <Name>ChooseFingerprintReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClientConvertCostCentre\ClientConvertCostCentre.csproj">
+      <Project>{F8E842A2-E849-47E2-A58A-C068CC1FF00B}</Project>
+      <Name>ClientConvertCostCentre</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClockInBoundary\ClockInBoundary.csproj">
+      <Project>{E48CC044-DDB6-42C8-BCFC-5C13CC4F41F9}</Project>
+      <Name>ClockInBoundary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClockToEmployeeLink\ClockToEmployeeLink.csproj">
+      <Project>{50D62B48-1D0F-47AA-95E8-874388FF9CDB}</Project>
+      <Name>ClockToEmployeeLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Clock\Clock.csproj">
+      <Project>{A278C9B2-AF28-4335-B2D7-48D6DEBEF13B}</Project>
+      <Name>Clock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsDBConnectionObjects\clsDBConnectionObjects.csproj">
+      <Project>{A93C21F2-C5CE-4C5D-8BE3-0D9935AC7714}</Project>
+      <Name>clsDBConnectionObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsFixInteractPayrollClientDatabase\clsFixInteractPayrollClientDatabase.csproj">
+      <Project>{47c14b49-6fda-48c4-af1e-86c61bdbb915}</Project>
+      <Name>clsFixInteractPayrollClientDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsISClientUtilities\clsISClientUtilities.csproj">
+      <Project>{7A57341C-01D4-41ED-B0B8-D356F2573354}</Project>
+      <Name>clsISClientUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsISUtilities\clsISUtilities.csproj">
+      <Project>{9641e261-ec6d-4333-81ee-885a3c2207f7}</Project>
+      <Name>clsISUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsReadersToDp\clsReadersToDp.csproj">
+      <Project>{d4d63fb1-72f4-453f-8018-d99c58a75817}</Project>
+      <Name>clsReadersToDp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DownloadFiles\DownloadFiles.csproj">
+      <Project>{870B6226-EFD5-4FE6-A8F7-DC578AB007FE}</Project>
+      <Name>DownloadFiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeClient\EmployeeClient.csproj">
+      <Project>{89BC5D6E-EAB3-42E0-8F7A-ECFA82D07ED7}</Project>
+      <Name>EmployeeClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeGroup\EmployeeGroup.csproj">
+      <Project>{a7120e89-bc6b-4dc6-9454-7b6a230cac93}</Project>
+      <Name>EmployeeGroup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeLinkDevice\EmployeeLinkDevice.csproj">
+      <Project>{676ECCE1-EF03-4D86-AADC-D1F83691FBC3}</Project>
+      <Name>EmployeeLinkDevice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeOverride\EmployeeOverride.csproj">
+      <Project>{88BD1F4A-DB5B-46E5-B914-3950608C20BD}</Project>
+      <Name>EmployeeOverride</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileDownload\FileDownload.csproj">
+      <Project>{EC330A2B-BFB2-4F2C-8B05-63B91F12F64D}</Project>
+      <Name>FileDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileUpload\FileUpload.csproj">
+      <Project>{CC7C6F73-E06C-47E0-8862-97F58DEDED8F}</Project>
+      <Name>FileUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FingerPrintClockServiceStartStop\FingerPrintClockServiceStartStop.csproj">
+      <Project>{BCE23310-B365-410F-9851-C730D7851DBC}</Project>
+      <Name>FingerPrintClockServiceStartStop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FingerPrintClockService\FingerPrintClockService.csproj">
+      <Project>{9D074EE8-DE8B-4780-9093-434D78E46742}</Project>
+      <Name>FingerPrintClockService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PasswordChange\PasswordChange.csproj">
+      <Project>{E6092E97-25C6-40FD-A5DA-FF4A9B12281E}</Project>
+      <Name>PasswordChange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SetupInternetWebServerIP\SetupInternetWebServerIP.csproj">
+      <Project>{AC8295D2-495D-4DE4-A512-663E45413FCA}</Project>
+      <Name>SetupInternetWebServerIP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeAttendanceDataDownload\TimeAttendanceDataDownload.csproj">
+      <Project>{AA80F348-DEE4-493C-ADC9-D80E4EB577CA}</Project>
+      <Name>TimeAttendanceDataDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeAttendanceDataUpload\TimeAttendanceDataUpload.csproj">
+      <Project>{76C7F289-43D5-4492-B302-3E2D5CB03AC9}</Project>
+      <Name>TimeAttendanceDataUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeAttendanceLogon\TimeAttendanceLogon.csproj">
+      <Project>{DDE62282-1BC3-43D0-A495-048B82DDB62B}</Project>
+      <Name>TimeAttendanceLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeAttendanceMain\TimeAttendanceMain.csproj">
+      <Project>{D858E82F-3AF3-4FCA-B734-5DFD03FFCA19}</Project>
+      <Name>TimeAttendanceMain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeSheetBatchClient\TimeSheetBatchClient.csproj">
+      <Project>{46B04238-8714-490D-9F2E-9963644EB393}</Project>
+      <Name>TimeSheetBatchClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeSheetClient\TimeSheetClient.csproj">
+      <Project>{D7E7B810-D940-4EE3-A2D3-DEE4DCE0A694}</Project>
+      <Name>TimeSheetClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserClient\UserClient.csproj">
+      <Project>{B5E7224E-CB10-4661-8944-B01DCFFC88FD}</Project>
+      <Name>UserClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

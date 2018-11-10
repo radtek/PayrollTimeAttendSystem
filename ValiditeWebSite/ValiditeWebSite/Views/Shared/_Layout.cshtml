@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="google-site-verification" content="P7vCwdisl9TG4rUxLw9mCFquoZmdUuFEoTgTUIeyX74" />
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+@if (@Session["UserName"] == null
+|| @Session["UserName"].ToString() == "")
+{
+                    <a class="navbar-brand" title="">
+                       <img style="margin-top: -5px;"
+                       src="~/Image/Validite.png">
+                    </a>
+}
+else
+{
+                    <a class="navbar-brand" title="">
+                      <img style="margin-top: -5px;"
+                      src="~/Image/ValiditeBusiness.png">
+                    </a>
+}
+            </div>
+
+            <div class="navbar-collapse collapse">
+
+@if (@Session["UserName"] == null
+|| @Session["UserName"].ToString() == "")
+{                 <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Services
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li>@Html.ActionLink("Time Attendance", "TimeAttendance", "Home")</li>
+                            <li>@Html.ActionLink("Wages", "Wages", "Home")</li>
+                            <li>@Html.ActionLink("Salaries", "Salaries", "Home")</li>
+
+                        </ul>
+                    </li>
+
+                    <li>@Html.ActionLink("Biometrics", "Biometrics", "Home")</li>
+                    <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+}
+else
+{
+                <ul class="nav navbar-nav ">
+
+                    <li>@Html.ActionLink("Downloads", "Downloads", "Home")</li>
+                    <li>@Html.ActionLink("Support", "Support", "Home")</li>
+
+                </ul>
+}
+                <ul class="nav navbar-nav navbar-right">
+
+@if (@Session["UserName"] == null
+|| @Session["UserName"].ToString() == "")
+{
+                    <li class="navbar-text"></li>
+}
+else
+{
+                    <li class="navbar-text">@Session["UserName"].ToString()</li> 
+}
+
+@if (@Session["UserName"] == null
+|| @Session["UserName"].ToString() == "")
+{
+                    <li><a href="@Url.Action("Login", "Home")"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>   Login</a></li>
+}
+else
+{
+                    <li><a href="@Url.Action("Logout", "Home")"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>   Logout</a></li>
+}
+                </ul>
+            </div>
+
+            <h3 style="color:#008000; margin-top: 0px;">@ViewData["PageTitle"]</h3>
+
+        </div>
+
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+
+            <div class="container">
+
+                <p>&copy; 2016 - Validite Web Site</p>
+
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B52A42BD-F64E-46B0-9FB0-3F0861621501}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProcessPayrollRunFromQueue</RootNamespace>
+    <AssemblyName>clsProcessPayrollRunFromQueue</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="clsProcessPayrollRunFromQueue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\busClosePayrollRun\busClosePayrollRun.csproj">
+      <Project>{182eeb6b-3e18-4b4f-abbc-27a9791b5c09}</Project>
+      <Name>busClosePayrollRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busOpenPayrollRun\busOpenPayrollRun.csproj">
+      <Project>{8eb09cc9-01b7-4e62-9cc2-2d9ff292fb72}</Project>
+      <Name>busOpenPayrollRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRptPaySlip\busRptPaySlip.csproj">
+      <Project>{7538d95a-62ab-4849-b7d5-c50a85a9e0af}</Project>
+      <Name>busRptPaySlip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceRun\busTimeAttendanceRun.csproj">
+      <Project>{713604f0-ae27-4e72-88dc-6be13f7cfdc9}</Project>
+      <Name>busTimeAttendanceRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsProcessPayrollRunFromQueueDataContract\clsProcessPayrollRunFromQueueDataContract.csproj">
+      <Project>{97ccf025-88b5-4007-8fb3-4530f8ac509c}</Project>
+      <Name>clsProcessPayrollRunFromQueueDataContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,8 @@
+2017-09-30 15:07:32 Helpers Exception = Object reference not set to an instance of an object. 
+2017-09-30 15:07:39 Helpers Exception = Object reference not set to an instance of an object. 
+2017-09-30 15:07:42 Helpers Exception = Object reference not set to an instance of an object. 
+2017-09-30 15:07:44 Helpers Exception = Object reference not set to an instance of an object. 
+2017-09-30 15:07:46 Helpers Exception = Object reference not set to an instance of an object. 
+2017-09-30 15:07:47 Helpers Exception = Object reference not set to an instance of an object. 
+2017-09-30 15:07:49 Helpers Exception = Object reference not set to an instance of an object. 
+2017-09-30 15:07:50 Helpers Exception = Object reference not set to an instance of an object. 

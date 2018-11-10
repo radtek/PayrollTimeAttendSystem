@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D858E82F-3AF3-4FCA-B734-5DFD03FFCA19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InteractPayrollClient</RootNamespace>
+    <AssemblyName>TimeAttendanceMain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmCloseOrSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCloseOrSave.Designer.cs">
+      <DependentUpon>frmCloseOrSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMessage.Designer.cs">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTimeAttendanceMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTimeAttendanceMain.Designer.cs">
+      <DependentUpon>frmTimeAttendanceMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCloseOrSave.resx">
+      <DependentUpon>frmCloseOrSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMessage.resx">
+      <DependentUpon>frmMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTimeAttendanceMain.resx">
+      <DependentUpon>frmTimeAttendanceMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timesheet16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\timesheet24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\device16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\device32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\device24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetBatch16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeSheetBatch24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeviceEmployee16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeviceEmployee24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Globe.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\clsISClientUtilities\clsISClientUtilities.csproj">
+      <Project>{7A57341C-01D4-41ED-B0B8-D356F2573354}</Project>
+      <Name>clsISClientUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsISUtilities\clsISUtilities.csproj">
+      <Project>{9641E261-EC6D-4333-81EE-885A3C2207F7}</Project>
+      <Name>clsISUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DownloadFiles\DownloadFiles.csproj">
+      <Project>{870B6226-EFD5-4FE6-A8F7-DC578AB007FE}</Project>
+      <Name>DownloadFiles</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataDownload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataDownload24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataUpload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataUpload24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataDownloadUpload16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataDownloadUpload24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataUploadTimeSheets16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataUploadTimeSheets24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Validite26.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Validite32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Validite28New.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

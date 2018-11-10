@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportEarningsDeductionsHorizontalPage" targetNamespace="http://tempuri.org/ReportEarningsDeductionsHorizontalPage.xsd" xmlns:mstns="http://tempuri.org/ReportEarningsDeductionsHorizontalPage.xsd" xmlns="http://tempuri.org/ReportEarningsDeductionsHorizontalPage.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportEarningsDeductionsHorizontalPage" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportEarningsDeductionsHorizontalPage" msprop:Generator_UserDSName="ReportEarningsDeductionsHorizontalPage">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReportHorizPage" msprop:Generator_TableClassName="ReportHorizPageDataTable" msprop:Generator_TableVarName="tableReportHorizPage" msprop:Generator_TablePropName="ReportHorizPage" msprop:Generator_RowDeletingName="ReportHorizPageRowDeleting" msprop:Generator_UserTableName="ReportHorizPage" msprop:Generator_RowChangingName="ReportHorizPageRowChanging" msprop:Generator_RowEvHandlerName="ReportHorizPageRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportHorizPageRowDeleted" msprop:Generator_RowEvArgName="ReportHorizPageRowChangeEvent" msprop:Generator_RowChangedName="ReportHorizPageRowChanged" msprop:Generator_RowClassName="ReportHorizPageRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="COMPANY_DESC" msprop:Generator_ColumnVarNameInTable="columnCOMPANY_DESC" msprop:Generator_ColumnPropNameInRow="COMPANY_DESC" msprop:Generator_ColumnPropNameInTable="COMPANY_DESCColumn" msprop:Generator_UserColumnName="COMPANY_DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="REPORT_HEADER_DESC" msprop:Generator_ColumnVarNameInTable="columnREPORT_HEADER_DESC" msprop:Generator_ColumnPropNameInRow="REPORT_HEADER_DESC" msprop:Generator_ColumnPropNameInTable="REPORT_HEADER_DESCColumn" msprop:Generator_UserColumnName="REPORT_HEADER_DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="EMPLOYEE_CODE" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_CODE" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_CODE" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_CODEColumn" msprop:Generator_UserColumnName="EMPLOYEE_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="EMPLOYEE_NAMES" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE_NAMES" msprop:Generator_ColumnPropNameInRow="EMPLOYEE_NAMES" msprop:Generator_ColumnPropNameInTable="EMPLOYEE_NAMESColumn" msprop:Generator_UserColumnName="EMPLOYEE_NAMES" type="xs:string" minOccurs="0" />
+              <xs:element name="SORT_IND" msprop:Generator_ColumnVarNameInTable="columnSORT_IND" msprop:Generator_ColumnPropNameInRow="SORT_IND" msprop:Generator_ColumnPropNameInTable="SORT_INDColumn" msprop:Generator_UserColumnName="SORT_IND" type="xs:string" minOccurs="0" />
+              <xs:element name="FIELD1_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD1_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD1_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD1_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD1_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD2_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD2_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD2_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD2_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD2_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD3_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD3_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD3_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD3_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD3_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD4_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD4_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD4_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD4_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD4_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD5_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD5_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD5_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD5_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD5_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD6_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD6_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD6_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD6_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD6_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD7_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD7_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD7_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD7_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD7_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD8_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD8_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD8_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD8_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD8_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD9_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD9_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD9_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD9_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD9_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD10_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD10_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD10_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD10_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD10_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD11_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD11_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD11_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD11_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD11_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="FIELD12_AMOUNT" msprop:Generator_ColumnVarNameInTable="columnFIELD12_AMOUNT" msprop:Generator_ColumnPropNameInRow="FIELD12_AMOUNT" msprop:Generator_ColumnPropNameInTable="FIELD12_AMOUNTColumn" msprop:Generator_UserColumnName="FIELD12_AMOUNT" type="xs:double" minOccurs="0" />
+              <xs:element name="PAY_CATEGORY_DESC" msprop:Generator_ColumnVarNameInTable="columnPAY_CATEGORY_DESC" msprop:Generator_ColumnPropNameInRow="PAY_CATEGORY_DESC" msprop:Generator_ColumnPropNameInTable="PAY_CATEGORY_DESCColumn" msprop:Generator_UserColumnName="PAY_CATEGORY_DESC" type="xs:string" minOccurs="0" />
+              <xs:element name="PAY_PERIOD_DATE" msprop:Generator_ColumnVarNameInTable="columnPAY_PERIOD_DATE" msprop:Generator_ColumnPropNameInRow="PAY_PERIOD_DATE" msprop:Generator_ColumnPropNameInTable="PAY_PERIOD_DATEColumn" msprop:Generator_UserColumnName="PAY_PERIOD_DATE" type="xs:string" minOccurs="0" />
+              <xs:element name="SORT_NUMBER" msprop:Generator_ColumnVarNameInTable="columnSORT_NUMBER" msprop:Generator_ColumnPropNameInRow="SORT_NUMBER" msprop:Generator_ColumnPropNameInTable="SORT_NUMBERColumn" msprop:Generator_UserColumnName="SORT_NUMBER" type="xs:string" minOccurs="0" />
+              <xs:element name="HORIZONTAL_PAGE_NUMBER" msprop:Generator_ColumnVarNameInTable="columnHORIZONTAL_PAGE_NUMBER" msprop:Generator_ColumnPropNameInRow="HORIZONTAL_PAGE_NUMBER" msprop:Generator_ColumnPropNameInTable="HORIZONTAL_PAGE_NUMBERColumn" msprop:Generator_UserColumnName="HORIZONTAL_PAGE_NUMBER" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

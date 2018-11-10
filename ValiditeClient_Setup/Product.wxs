@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+      xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+
+  <Product Id="{C1E3F652-C352-41C5-918B-24C40B6C4425}" UpgradeCode="{086103A0-38B9-4B12-9458-F9EE818A3F2B}" Version="1.0.0.0" Language="1033" Name="Validite Client" Manufacturer="Validite">
+    <Package InstallerVersion="300" Compressed="yes" InstallScope="perMachine"/>
+    <Media Id="1" Cabinet="myapplication.cab" EmbedCab="yes" />
+   
+      <!-- Check that Framework 4 or 4.5 is Installed -->
+    <PropertyRef Id="NETFRAMEWORK45"/>
+    <Condition Message="This application requires .NET Framework 4.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR (NETFRAMEWORK45)]]>
+    </Condition>
+
+    <!-- Add UI to your installer -->
+    <UI Id="WixUI_Minimal">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="Minimal" />
+
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+
+      <!-- This is the welcome dialog you specified-->
+      <DialogRef Id="WelcomeDlg" />
+
+      <!-- Hook the new welcome dialog to the next one in the stack-->
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="PrepareDlg">1</Publish>
+
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+
+      <Property Id="ARPNOMODIFY" Value="1" />
+    </UI>
+
+    <UIRef Id="WixUI_Common" />
+  
+    <!-- Step 1: Define the directory structure NB Name Holds The New Directory Name -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+
+      <Directory Id="DesktopFolder"  SourceName="Desktop"/>
+      <Directory Id="ProgramMenuFolder"  SourceName="ApplicationProgramsFolder"/>
+
+
+      <Directory Id="ProgramFilesFolder" >
+        <Directory Id="InteractSoftware" Name="Validite">
+         
+          <Directory Id="APPLICATIONROOTDIRECTORY" Name="Validite Client">
+
+            <Component Id="InstalledDirectory" Guid="{A30E3446-53BD-436D-A399-406BE1956E57}">
+              <CreateFolder Directory="APPLICATIONROOTDIRECTORY">
+                <Permission User="Everyone" GenericAll="yes" />
+              </CreateFolder>
+              <RemoveFolder Id='APPLICATIONROOTDIRECTORY' On='uninstall' />
+            </Component>
+           
+            <Component Id="BackupRestoreClientDatabase.dll" Guid="" Permanent="no">
+              <File Id="BackupRestoreClientDatabase.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\BackupRestoreClientDatabase.dll" PatchIgnore="yes" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="ChooseFingerprintReader.dll" Guid="" Permanent="no">
+              <File Id="ChooseFingerprintReader.dll" Source="..\_PayrollLive Files\Client\GoingLive\ChooseFingerprintReader.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="ClientConvertCostCentre.dll" Guid="" Permanent="no">
+              <File Id="ClientConvertCostCentre.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\ClientConvertCostCentre.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="Clock.dll" Guid="" Permanent="no">
+              <File Id="Clock.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\Clock.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="ClockInBoundary.dll" Guid="" Permanent="no">
+              <File Id="ClockInBoundary.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\ClockInBoundary.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="ClockToEmployeeLink.dll" Guid="" Permanent="no">
+              <File Id="ClockToEmployeeLink.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\ClockToEmployeeLink.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+            
+            <Component Id="clsISClientUtilities.dll" Guid="" Permanent="no">
+              <File Id="clsISClientUtilities.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\clsISClientUtilities.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="clsISUtilities.dll" Guid="*" Permanent="no">
+              <File Id="clsISUtilities.dll" Source="..\_PayrollLive Files\Client\GoingLive\clsISUtilities.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="clsReadersToDp.dll" Guid="" Permanent="no">
+              <File Id="clsReadersToDp.dll" Source="..\_PayrollLive Files\Client\GoingLive\clsReadersToDp.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            
+            <Component Id="DownloadFiles.dll" Guid="*" Permanent="no">
+              <File Id="DownloadFiles.dll" Source="..\_PayrollLive Files\Client\GoingLive\DownloadFiles.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="DPCtlUruNet.dll" Guid="" Permanent="no">
+              <File Id="DPCtlUruNet.dll" Source="..\_PayrollLive Files\Client\GoingLive\DPCtlUruNet.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="DPUruNet.dll" Guid="" Permanent="no">
+              <File Id="DPUruNet.dll" Source="..\_PayrollLive Files\Client\GoingLive\DPUruNet.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+
+            <Component Id="EmployeeClient.dll" Guid="" Permanent="no">
+              <File Id="EmployeeClient.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\EmployeeClient.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="EmployeeGroup.dll" Guid="" Permanent="no">
+              <File Id="EmployeeGroup.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\EmployeeGroup.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+            
+            <Component Id="EmployeeLinkDevice.dll" Guid="" Permanent="no">
+              <File Id="EmployeeLinkDevice.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\EmployeeLinkDevice.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="EmployeeOverride.dll" Guid="" Permanent="no">
+              <File Id="EmployeeOverride.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\EmployeeOverride.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            
+            <Component Id="FileDownload.dll" Guid="" Permanent="no">
+              <File Id="FileDownload.dll" Source="..\_PayrollLive Files\Client\GoingLive\FileDownload.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="FileUpload.dll" Guid="" Permanent="no">
+              <File Id="FileUpload.dll" Source="..\_PayrollLive Files\Client\GoingLive\FileUpload.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+            
+            <Component Id="FingerPrintClockService.dll" Guid="" Permanent="no">
+              <File Id="FingerPrintClockService.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\FingerPrintClockService.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="FingerPrintClockServiceStartStop.dll" Guid="" Permanent="no">
+              <File Id="FingerPrintClockServiceStartStop.dll" Source="..\_TimeAttendanceClientLive Files\Server\GoingLive\FingerPrintClockServiceStartStop.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="FingerPrintReader.dll" Guid="*" Permanent="no">
+              <File Id="FingerPrintReader.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\FingerPrintReader.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+          
+
+            <Component Id="IBScanUltimate.dll1" Guid="" Permanent="no">
+              <File Id="IBScanUltimate.dll1" Source="..\_OtherLive Files\IBScanUltimate.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="iUareuSDK.dll" Guid="" Permanent="no">
+              <File Id="iUareuSDK.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\iUareuSDK.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            
+            <Component Id="PasswordChange.dll" Guid="" Permanent="no">
+              <File Id="PasswordChange.dll" Source="..\_PayrollLive Files\Client\GoingLive\PasswordChange.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="SetupInternetWebServerIP.dll" Guid="" Permanent="no">
+              <File Id="SetupInternetWebServerIP.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\SetupInternetWebServerIP.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="TimeAttendanceClient.exe" Guid="{A5718C9B-CA5B-4B94-8912-6B1BC1A906E6}">
+              <File Id="TimeAttendanceClient.exe" Source="..\_OtherLive Files\TimeAttendanceClient.exe" KeyPath="yes" Checksum="yes" >
+
+                <Shortcut Id="DesktopShortcut"
+                                Directory="DesktopFolder"
+                                Name="Validite Client"
+                                Description="Validite Client"
+                                WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                                Icon="Validite128.ico"
+                                Advertise="yes" >
+                  <Icon Id="Validite128.ico" SourceFile="..\_OtherLive Files\Validite128.ico" />
+
+                </Shortcut>
+
+                <Shortcut Id="ApplicationShortcut"
+                               Directory="ProgramMenuFolder"
+                               Name="Validite Client"
+                               Description="Validite Client"
+                               WorkingDirectory="APPLICATIONROOTDIRECTORY"
+                               Icon="Validite64.ico"
+                               Advertise="yes" >
+                  <Icon Id="Validite64.ico" SourceFile="..\_OtherLive Files\Validite64.ico" />
+
+                </Shortcut>
+    
+              </File>
+
+            </Component>
+
+            <Component Id="TimeAttendanceClientIS.exe" Guid="" Permanent="no">
+              <File Id="TimeAttendanceClientIS.exe" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\TimeAttendanceClientIS.exe"  KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="TimeAttendanceDataDownload.dll" Guid="" Permanent="no">
+              <File Id="TimeAttendanceDataDownload.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\TimeAttendanceDataDownload.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="TimeAttendanceDataUpload.dll" Guid="" Permanent="no">
+              <File Id="TimeAttendanceDataUpload.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\TimeAttendanceDataUpload.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="TimeAttendanceLogon.dll" Guid="" Permanent="no">
+              <File Id="TimeAttendanceLogon.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\TimeAttendanceLogon.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="TimeAttendanceMain.dll" Guid="" Permanent="no">
+              <File Id="TimeAttendanceMain.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\TimeAttendanceMain.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="TimeSheetBatchClient.dll" Guid="" Permanent="no">
+              <File Id="TimeSheetBatchClient.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\TimeSheetBatchClient.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="TimeSheetClient.dll" Guid="" Permanent="no">
+              <File Id="TimeSheetClient.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\TimeSheetClient.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="TimeSheetDynamicUploadIS.exe" Guid="" Permanent="no">
+              <File Id="TimeSheetDynamicUploadIS.exe" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\TimeSheetDynamicUploadIS.exe" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+
+            <Component Id="URLConfig.txt" Guid="" Permanent="no">
+              <File Id="URLConfig.txt" Source="..\_PayrollLive Files\Client\GoingLive\URLConfig.txt" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+            <Component Id="UserClient.dll" Guid="" Permanent="no">
+              <File Id="UserClient.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\UserClient.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+
+          </Directory>
+
+        </Directory>
+      </Directory>
+    </Directory>
+  
+    
+    <!-- Step 4: Tell WiX to install the files -->
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+     
+      <ComponentRef Id="BackupRestoreClientDatabase.dll" />
+
+      <ComponentRef Id="ChooseFingerprintReader.dll" />
+      <ComponentRef Id="ClientConvertCostCentre.dll" />
+      <ComponentRef Id="Clock.dll" />
+      <ComponentRef Id="ClockInBoundary.dll" />
+      <ComponentRef Id="ClockToEmployeeLink.dll" />
+      <ComponentRef Id="clsISClientUtilities.dll" />
+      <ComponentRef Id="clsISUtilities.dll" />
+      <ComponentRef Id="clsReadersToDp.dll" />
+
+      <ComponentRef Id="DownloadFiles.dll" />
+      <ComponentRef Id="DPUruNet.dll" />
+      <ComponentRef Id="DPCtlUruNet.dll" />
+
+      <ComponentRef Id="EmployeeClient.dll" />
+      <ComponentRef Id="EmployeeGroup.dll" />
+      <ComponentRef Id="EmployeeLinkDevice.dll" />
+      <ComponentRef Id="EmployeeOverride.dll" />
+
+      <ComponentRef Id="FileDownload.dll" />
+      <ComponentRef Id="FileUpload.dll" />
+      <ComponentRef Id="FingerPrintClockService.dll" />
+      <ComponentRef Id="FingerPrintClockServiceStartStop.dll" />
+      <ComponentRef Id="FingerPrintReader.dll" />
+
+      <ComponentRef Id="IBScanUltimate.dll1" />
+      <ComponentRef Id="iUareuSDK.dll" />
+
+      <ComponentRef Id="PasswordChange.dll" />
+
+      <ComponentRef Id="SetupInternetWebServerIP.dll" />
+
+      <ComponentRef Id="TimeAttendanceClient.exe" />
+      <ComponentRef Id="TimeAttendanceClientIS.exe" />
+      <ComponentRef Id="TimeAttendanceDataDownload.dll" />
+      <ComponentRef Id="TimeAttendanceDataUpload.dll" />
+      <ComponentRef Id="TimeAttendanceLogon.dll" />
+      <ComponentRef Id="TimeAttendanceMain.dll" />
+      <ComponentRef Id="TimeSheetBatchClient.dll" />
+      <ComponentRef Id="TimeSheetClient.dll" />
+      <ComponentRef Id="TimeSheetDynamicUploadIS.exe" />
+      
+      <ComponentRef Id="UserClient.dll" />
+      <ComponentRef Id="URLConfig.txt" />
+      
+    </Feature>
+
+    <!-- Grant Read / Write Permission to Created Directory -->
+    <Feature Id="FolderPermissions" Title="InstallerDirectoryPermissions" Level="1">
+      <ComponentRef Id="InstalledDirectory" />
+    </Feature>
+    
+  </Product>
+</Wix>

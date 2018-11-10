@@ -1,0 +1,5 @@
+
+1)	Run "dotNetFx40_Full_x86_x64.exe"
+2)	Create folder "C:\Program Files\Interact Software" and Copy "payroll" folder into this folder (From DVD).
+3)	Make sure your machine is connected to Internet
+4)	Run "Payroll.exe" in "C:\Program Files\Interact Software\Payroll" folder

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+      xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+
+  <Product Id="{ACB5F116-A2B4-46A4-9398-04F7A6ED6F7F}" UpgradeCode="{306BD615-8581-4DA0-B903-8362EB8E5B03}" Version="1.0.0.0" Language="1033" Name="Validite Clockings Services" Manufacturer="Validite">
+    <Package InstallerVersion="300" Compressed="yes" InstallScope="perMachine"/>
+    <Media Id="1" Cabinet="myapplication.cab" EmbedCab="yes" />
+   
+    <!-- Check that Framework 4.5 is Installed -->
+    <PropertyRef Id="NETFRAMEWORK45"/>
+    <Condition Message="This application requires .NET Framework 4.5. Please install the .NET Framework then run this installer again.">
+      <![CDATA[Installed OR (NETFRAMEWORK45)]]>
+    </Condition>
+
+    <!-- Add UI to your installer -->
+    <UI Id="WixUI_Minimal">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="Minimal" />
+
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+
+      <!-- This is the welcome dialog you specified-->
+      <DialogRef Id="WelcomeDlg" />
+
+      <!-- Hook the new welcome dialog to the next one in the stack-->
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="PrepareDlg">1</Publish>
+
+      <Publish Dialog="ExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+
+      <Property Id="ARPNOMODIFY" Value="1" />
+    </UI>
+
+    <UIRef Id="WixUI_Common" />
+  
+    <!-- Step 1: Define the directory structure NB Name Holds The New Directory Name -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+
+      <Directory Id="DesktopFolder"  SourceName="Desktop"/>
+      <Directory Id="ProgramMenuFolder"  SourceName="ApplicationProgramsFolder"/>
+            
+      <Directory Id="ProgramFilesFolder" >
+        
+        <Directory Id="InteractSoftware" Name="Validite">
+          
+          <Directory Id="APPLICATIONROOTDIRECTORY" Name="Validite Clockings Services">
+            
+            <Component Id="InstalledDirectory" Guid="{2DC66DD5-AC98-409F-BE14-821A916ED753}">
+              <CreateFolder Directory="APPLICATIONROOTDIRECTORY">
+                <Permission User="Everyone" GenericAll="yes" />
+              </CreateFolder>
+              <RemoveFolder Id='APPLICATIONROOTDIRECTORY' On='uninstall' />
+            </Component>
+
+            <Component Id="clsISClientUtilities.dll" Guid="{992A4C3A-FE4B-4007-B1B1-B9B88D089D96}">
+              <File Id="clsISClientUtilities.dll" Source="..\_TimeAttendanceClientLive Files\Client\GoingLive\clsISClientUtilities.dll" KeyPath="yes" Checksum="yes"/>
+            </Component>
+                       
+            <!-- Windows Service Setup for FingerPrint Clock and TimeAttendance Service -->
+            <Component Id="ValiditeClockingsService.exe" Guid="{48BA2511-9565-453A-B809-4130FC3F842F}">
+              <File Id="ValiditeClockingsService.exe" Source="..\_OtherLive Files\ValiditeClockingsService.exe" KeyPath="yes" Checksum="yes"/>
+              <ServiceInstall
+              Id="ServiceInstaller"
+              Type="ownProcess"
+              Name="ValiditeClockingsService"
+              DisplayName="Validite Clockings Service"
+              Description="Inserts Records into Validite Database"
+              Start="auto"
+              Account="[SERVICEACCOUNT]"
+              Password="[SERVICEPASSWORD]"
+              ErrorControl="normal"
+              Arguments=" /start ValiditeClockingsService"  />
+              <ServiceControl Id="StartService" Start="install" Stop="both" Remove="uninstall" Name="ValiditeClockingsService" Wait="yes" />
+            </Component>
+
+            <Component Id="ValiditeClockingsService.exe.config" Guid="{27766E5C-0EA8-42CB-A11B-84E9E7670F16}">
+              <File Id="ValiditeClockingsService.exe.config" Source="..\_OtherLive Files\ValiditeClockingsService.exe.config" KeyPath="yes" Checksum="yes"/>
+            </Component>
+            
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+  
+    <!-- Step 2: Tell WiX to install the files -->
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+
+      <ComponentRef Id="clsISClientUtilities.dll" />
+      <ComponentRef Id="ValiditeClockingsService.exe" />
+      <ComponentRef Id="ValiditeClockingsService.exe.config" />
+      
+    </Feature>
+
+    <!-- Grant Read / Write Permission to Created Directory -->
+    <Feature Id="FolderPermissions" Title="InstallerDirectoryPermissions" Level="1">
+      <ComponentRef Id="InstalledDirectory" />
+    
+    </Feature>
+
+  </Product>
+</Wix>

@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8AA669BA-39B4-416B-B56A-867E1FC86442}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FingerPrintClockServer</RootNamespace>
+    <AssemblyName>FingerPrintClockTimeAttendanceServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>FingerPrintClockServer.Program</StartupObject>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>http://localhost/FingerPrintClockServer/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmFingerPrintClockServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmFingerPrintClockServer.resx">
+      <DependentUpon>frmFingerPrintClockServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\busClientDataDownload\busClientDataDownload.csproj">
+      <Project>{38E52861-5721-46A6-9754-204F34E71DA1}</Project>
+      <Name>busClientDataDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientDataUpload\busClientDataUpload.csproj">
+      <Project>{93F250D3-0FAD-4DEB-A118-0071844B2510}</Project>
+      <Name>busClientDataUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientPayrollLogon\busClientPayrollLogon.csproj">
+      <Project>{0f0f490b-b76f-4e97-b863-c4e505d5077b}</Project>
+      <Name>busClientPayrollLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientTimeSheetDynamicUpload\busClientTimeSheetDynamicUpload.csproj">
+      <Project>{D431EB56-C4B0-4EF5-B79C-290568B04E35}</Project>
+      <Name>busClientTimeSheetDynamicUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClockInBoundary\busClockInBoundary.csproj">
+      <Project>{3F019F1D-0496-4C55-B6C8-44858037632F}</Project>
+      <Name>busClockInBoundary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClockToEmployeeLink\busClockToEmployeeLink.csproj">
+      <Project>{8547534A-7F29-46C0-8685-DBA0F30FE126}</Project>
+      <Name>busClockToEmployeeLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClock\busClock.csproj">
+      <Project>{8F0FCDCC-BB5A-4E57-8E1E-CDF8A43BC09C}</Project>
+      <Name>busClock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeClient\busEmployeeClient.csproj">
+      <Project>{25BF0826-1F7F-4258-82A5-2EC6432D14D1}</Project>
+      <Name>busEmployeeClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeGroup\busEmployeeGroup.csproj">
+      <Project>{2DFB0075-394E-4BB6-B8EB-18E3C1FB6E11}</Project>
+      <Name>busEmployeeGroup</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeLinkDevice\busEmployeeLinkDevice.csproj">
+      <Project>{A268DB73-6295-4682-8576-A36B10EC6725}</Project>
+      <Name>busEmployeeLinkDevice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeOverride\busEmployeeOverride.csproj">
+      <Project>{6E66E389-10E0-46D8-8C76-EFF1B2723773}</Project>
+      <Name>busEmployeeOverride</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceLogon\busTimeAttendanceLogon.csproj">
+      <Project>{637F899E-8558-4F9A-B6CF-47203A0D867D}</Project>
+      <Name>busTimeAttendanceLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceMain\busTimeAttendanceMain.csproj">
+      <Project>{8AD3171E-C525-4668-A08B-73488F99A447}</Project>
+      <Name>busTimeAttendanceMain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeSheetBatchClient\busTimeSheetBatchClient.csproj">
+      <Project>{57DFE3EE-5B51-434D-B8B3-9BCA861013E2}</Project>
+      <Name>busTimeSheetBatchClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeSheetClient\busTimeSheetClient.csproj">
+      <Project>{82A69107-BAC8-4D73-B4CC-3D962BBE019C}</Project>
+      <Name>busTimeSheetClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busUserClient\busUserClient.csproj">
+      <Project>{420EA5CD-F23B-4392-9CB6-3B400D40EF19}</Project>
+      <Name>busUserClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsDBConnectionObjects\clsDBConnectionObjects.csproj">
+      <Project>{A93C21F2-C5CE-4C5D-8BE3-0D9935AC7714}</Project>
+      <Name>clsDBConnectionObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsFixInteractPayrollClientDatabase\clsFixInteractPayrollClientDatabase.csproj">
+      <Project>{47c14b49-6fda-48c4-af1e-86c61bdbb915}</Project>
+      <Name>clsFixInteractPayrollClientDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FingerPrintClockService\FingerPrintClockService.csproj">
+      <Project>{9D074EE8-DE8B-4780-9093-434D78E46742}</Project>
+      <Name>FingerPrintClockService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PortSetup\PortSetup.csproj">
+      <Project>{4D26D996-84F1-459A-B900-01F4ABBB83D5}</Project>
+      <Name>PortSetup</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

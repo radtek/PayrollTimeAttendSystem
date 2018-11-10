@@ -1,0 +1,219 @@
+﻿@{
+    ViewData["Title"] = "Time Attendance Biometrics Fingerprint Wages Salaries Payroll Validite";
+    ViewData["PageTitle"] = "Time Attendance";
+}
+
+<div class="row">
+  
+    <div class="col-md-12" >
+
+        <div class="panel panel-default ">
+            <div class="panel-heading">Time Attendance</div>
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <h3><strong>Time Attendance</strong></h3>
+
+                        <p>The Validite Time Attendance program has 2 parts</p>
+
+                        <ul>
+
+                            <li><strong>Time Attendance Client</strong></li>
+                            <li><strong>Time Attendance Internet</strong></li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                    </div>
+
+                    <div class="col-md-3">
+
+
+                        <br />
+
+                        <div class="alert alert-info">
+                            <h5><strong>Employee Monthly Cost</strong></h5>
+
+                            <ul>
+
+                                <li><strong>Time Attendance - R12.00</strong></li>
+                                <li><strong>Extra R8.00 to run Wages</strong></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    
+<div class="row">
+
+    <div class="col-md-6">
+
+        <div class="panel panel-default ">
+            <div class="panel-heading">Time Attendance Client</div>
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <h4><strong>Time Attendance Client</strong></h4>
+
+                        <br />
+
+                        <h4><strong>Clockings</strong></h4>
+
+                        <p>When an employee places his finger on a Validite Biometric Clock, the fingerprint Image is sent across the Local Network to the Validite Web Service. If the fingerprint is valid, a record is inserted and stored on the Client's Local SQL Server Database.</p>
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <br />
+                        <br />
+
+                        <a href="~/Home/Image?imagename=TimeAttendanceClient.png">
+
+                            <img src="~/Image/TimeAttendanceClient.png" class="img-thumbnail" alt="Cinque Terre">
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h4><strong>Validite Client Program</strong></h4>
+
+                        <p>This program gives the User access to the Clockings on the Local SQL Server Database. The user can fix any Clockings in error before they are finally uploaded to Validite's SQL Server Database via the Internet.</p>
+
+                        <p>Fingerprints can also be taken on within this program. The other method is on the actual Clocks.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h4><strong>Networked</strong></h4>
+
+                        <p>All components of the Time Attendance Client system are networked. This means that all components speak to a Local SQL Server Database directly.</p>
+
+                        <p>Advantages of such a system is that there is No Import / Export of files and that there is no other 3rd party software involved.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h4><strong>Backups</strong></h4>
+
+                        <p>A Backup of the Local SQL Server Database is taken daily. Each Backup is kept for a 10 day period.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="panel panel-default ">
+            <div class="panel-heading">Time Attendance Internet</div>
+            <div class="panel-body">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <h4><strong>Time Attendance Internet</strong></h4>
+
+                        <br />
+
+                        <h4><strong>Clockings</strong></h4>
+
+                        <p>Employee Clockings are <strong>Uploaded</strong> from the Client's Local SQL Server Database to the Validite Internet SQL Server Database.</p>
+                        <p>This can be achieved in 2 ways</p>
+
+                        <p>In a <strong>Batch Job</strong>, all Clockings are fixed before they are uploaded.</p>
+
+                        <p>In a <strong>Scheduled Job</strong>, Clockings are uploaded and Clocking fixes will occur directly on Validite's Internet SQL Server Database via a Web-Based program.</p>
+
+
+                    </div>
+
+
+                    <div class="col-md-6">
+
+                        <br />
+                        <br />
+
+                        <a href="~/Home/Image?imagename=TimeAttendanceInternet.png">
+
+                            <img src="~/Image/TimeAttendanceInternet.png" class="img-thumbnail" alt="Cinque Terre">
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h4><strong>Validite Time Attendance Program (Internet)</strong></h4>
+
+                        <p>Here the User chooses the Period for which the Clockings will be rolled up ready for Wage Processing.</p>
+
+                        <p>The output from a Time Attendance run for each Employee is as follows</p>
+
+                        <ul>
+
+                            <li>Normal Time</li>
+                            <li>Overtime 1</li>
+                            <li>Overtime 2</li>
+                            <li>Overtime 3</li>
+                            <li>Public Holiday</li>
+
+                        </ul>
+
+                        <p>This data can then be exported from the Validite Time Attendance system and imported into another Payroll system.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

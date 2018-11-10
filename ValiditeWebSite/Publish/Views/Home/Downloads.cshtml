@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Downloads Time Attendance Biometrics Fingerprint Wages Salaries Payroll Validite";
+    ViewData["PageTitle"] = "Downloads";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default ">
+            <div class="panel-heading">Downloads</div>
+            <div class="panel-body">
+
+                @using (Html.BeginForm("Downloads", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+
+                    <h2>Validite Business Software Downloads (Installation Files)</h2>
+
+                    <br />
+
+                    <p>Before you begin, make sure that the machine where the software is going to be installed has the <b>.Net 4.5 Framework</b> Installed.<a href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=42643"> Download Here.</a></p>
+                    <p>You can download the latest software releases for the different programs from this page:</p>
+
+                    <br />
+
+                    <p>
+                        <h4>
+                            <span class="glyphicon glyphicon-download"></span> Validite Payroll (Internet)
+                            <a href="@Session["ValiditePayroll"]">Download</a> (5 Mb)
+                        </h4>
+
+                        <br />
+                                            
+                        <h4>
+                            <span class="glyphicon glyphicon-download"></span> Validite Time (Internet)
+                            <a href="@Session["ValiditeTime"]">Download</a> (5 Mb)
+                        </h4>
+
+                        <br />
+
+                        <h4>
+                            <span class="glyphicon glyphicon-download"></span> Validite Programs Installation
+                            <a href="@Session["ValiditeAllProgramsZipped"]">Download</a> (168 Mb)
+                        </h4>
+
+                        These are zipped files that needs to be decompressed into a temporary directory structure for Installation.
+                        <br />
+                        <br />
+                        The zipped folder contains
+                        <br />
+                        <br />
+
+                        <ul>
+                            <li>Validite Payroll (Internet)</li>
+                            <li>Validite Time (Internet)</li>
+                            <li>Validite Client</li>
+                            <li>Validite Clock</li>
+                            <li>DigitalPersona U.are.U RTE (Biometrics Software)</li>
+                            <li>Microsoft LocalDB (Database)</li>
+                            <li>ISDatabase Utility (Database Create)</li>
+                            <li>ValiditeSetup.exe (Use this program to install programs you require)</li>
+                        </ul>
+
+                        <br />
+                        NB. Click Download Arrow to Download
+                        <br />
+
+                    </p>
+
+                    <br />
+
+                    <p>
+                        <h4>
+                            <span class="glyphicon glyphicon-download"></span> Microsoft® SQL Server® 2008 R2 SP2 - Express Edition
+                            <a href="https://www.microsoft.com/en-za/download/details.aspx?id=30438">Download</a>
+                        </h4>
+
+                        <br />
+                        
+                    </p>
+
+                    <br />
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

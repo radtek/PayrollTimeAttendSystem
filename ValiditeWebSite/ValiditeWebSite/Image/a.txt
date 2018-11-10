@@ -1,0 +1,35 @@
+ Volume in drive C has no label.
+ Volume Serial Number is A65F-0EAA
+
+ Directory of C:\Validite Projects\Source\C#\PayrollTimeAttendSystem\ValiditeWebSite\ValiditeWebSite\Image
+
+2017-10-11  08:36 AM    <DIR>          .
+2017-10-11  08:36 AM    <DIR>          ..
+2017-10-11  08:36 AM                 0 a.txt
+2016-09-02  01:08 PM            82,777 A11.png
+2017-10-03  08:18 AM               378 Asterisk - Copy.png
+2017-10-03  08:27 AM               209 Asterisk.png
+2016-09-02  03:13 PM           244,567 BiometricProject.png
+2016-09-02  01:14 PM           119,930 BiometricReaders.png
+2016-09-10  05:12 PM            79,599 CostCentre.png
+2016-08-16  12:55 PM            60,877 Curve.png
+2016-09-10  05:30 PM            79,163 Employee.png
+2016-09-01  02:26 PM            45,154 EmployeeClockingProcess.png
+2016-08-30  11:26 AM            45,130 FingerPrintImage.png
+2016-09-02  08:36 AM            32,199 FingerPrintImageExtraction.png
+2016-09-10  05:18 PM            76,557 Leave.png
+2016-08-18  01:23 PM            39,620 Payroll.png
+2016-09-10  05:24 PM            89,130 PayrollTotals.png
+2016-09-10  05:31 PM            63,905 RunTimeAndAttendance.png
+2016-08-19  01:36 PM            41,556 Salaries.png
+2016-08-19  11:50 AM            25,672 TimeAttendanceClient.png
+2016-08-19  01:50 PM            45,586 TimeAttendanceInternet.png
+2016-09-10  05:33 PM            94,810 TimeSheet.png
+2016-09-10  05:28 PM            66,452 TimeSheetBatch.png
+2016-09-10  05:34 PM            90,389 TimeSheetTotals.png
+2016-08-16  01:00 PM            31,633 URU4500.png
+2016-05-10  07:11 PM             6,026 validite.png
+2016-05-20  12:41 PM             9,910 ValiditeBusiness.png
+2016-08-19  01:31 PM            68,856 Wages.png
+              26 File(s)      1,540,085 bytes
+               2 Dir(s)  58,773,782,528 bytes free

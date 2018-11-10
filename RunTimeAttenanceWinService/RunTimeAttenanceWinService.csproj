@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFC08D10-1728-49C8-BA2A-5CBD510853A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayrollTimeAttenanceRun</RootNamespace>
+    <AssemblyName>RunTimeAttenanceWinService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service.Designer.cs">
+      <DependentUpon>Service.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\busClosePayrollRun\busClosePayrollRun.csproj">
+      <Project>{182eeb6b-3e18-4b4f-abbc-27a9791b5c09}</Project>
+      <Name>busClosePayrollRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busOpenPayrollRun\busOpenPayrollRun.csproj">
+      <Project>{8eb09cc9-01b7-4e62-9cc2-2d9ff292fb72}</Project>
+      <Name>busOpenPayrollRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceRun\busTimeAttendanceRun.csproj">
+      <Project>{713604f0-ae27-4e72-88dc-6be13f7cfdc9}</Project>
+      <Name>busTimeAttendanceRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsDBConnectionObjects\clsDBConnectionObjects.csproj">
+      <Project>{a93c21f2-c5ce-4c5d-8be3-0d9935ac7714}</Project>
+      <Name>clsDBConnectionObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsISUtilities\clsISUtilities.csproj">
+      <Project>{9641e261-ec6d-4333-81ee-885a3c2207f7}</Project>
+      <Name>clsISUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsProcessPayrollRunFromQueueDataContract\clsProcessPayrollRunFromQueueDataContract.csproj">
+      <Project>{97ccf025-88b5-4007-8fb3-4530f8ac509c}</Project>
+      <Name>clsProcessPayrollRunFromQueueDataContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsProcessPayrollRunFromQueue\clsProcessPayrollRunFromQueue.csproj">
+      <Project>{b52a42bd-f64e-46b0-9fb0-3f0861621501}</Project>
+      <Name>clsProcessPayrollRunFromQueue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsTaxTableRead\clsTaxTableRead.csproj">
+      <Project>{7db5e44c-11a3-47c5-8afe-6da59dc19ece}</Project>
+      <Name>clsTaxTableRead</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsTax\clsTax.csproj">
+      <Project>{ee9c4ab7-9571-4416-8696-f5fd31e5ea09}</Project>
+      <Name>clsTax</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Service.resx">
+      <DependentUpon>Service.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

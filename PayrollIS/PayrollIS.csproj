@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E692E4D9-7ABC-49B9-9BBA-2EB383AC903E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InteractPayroll</RootNamespace>
+    <AssemblyName>PayrollIS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BackupRestoreDatabase\BackupRestoreDatabase.csproj">
+      <Project>{16F125F1-DCEC-463E-ADE3-A2784C43C26B}</Project>
+      <Name>BackupRestoreDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BatchEarning\BatchEarning.csproj">
+      <Project>{477C4AFA-F9A7-4462-8162-B1D0B1F130C6}</Project>
+      <Name>BatchEarning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busBackupRestoreClientDatabase\busBackupRestoreClientDatabase.csproj">
+      <Project>{b4686d9a-b449-493a-b3ef-f303bf2af621}</Project>
+      <Name>busBackupRestoreClientDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busBackupRestoreDatabase\busBackupRestoreDatabase.csproj">
+      <Project>{67C560F0-453A-453B-A6B6-06D57523DA9D}</Project>
+      <Name>busBackupRestoreDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busBatchEarning\busBatchEarning.csproj">
+      <Project>{24B35FF7-2283-47A5-B09E-DA83F231199B}</Project>
+      <Name>busBatchEarning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busCalender\busCalender.csproj">
+      <Project>{c3246eea-cf71-4f51-9bfd-4587e8fe2a9a}</Project>
+      <Name>busCalender</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientDataDownload\busClientDataDownload.csproj">
+      <Project>{38E52861-5721-46A6-9754-204F34E71DA1}</Project>
+      <Name>busClientDataDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientDataUpload\busClientDataUpload.csproj">
+      <Project>{93F250D3-0FAD-4DEB-A118-0071844B2510}</Project>
+      <Name>busClientDataUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClientPayrollLogon\busClientPayrollLogon.csproj">
+      <Project>{0F0F490B-B76F-4E97-B863-C4E505D5077B}</Project>
+      <Name>busClientPayrollLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busClosePayrollRun\busClosePayrollRun.csproj">
+      <Project>{182EEB6B-3E18-4B4F-ABBC-27A9791B5C09}</Project>
+      <Name>busClosePayrollRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busCompanyPaymentOptions\busCompanyPaymentOptions.csproj">
+      <Project>{BF70C602-1420-42E2-8685-761DB7C0CA8B}</Project>
+      <Name>busCompanyPaymentOptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busCompany\busCompany.csproj">
+      <Project>{B7C9544A-4291-44D0-9B9B-54AFAB867294}</Project>
+      <Name>busCompany</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busConvertEmployeeType\busConvertEmployeeType.csproj">
+      <Project>{ea43152f-eab6-4671-af17-3b5019761848}</Project>
+      <Name>busConvertEmployeeType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busCostCentre\busCostCentre.csproj">
+      <Project>{B780C4E8-71ED-4699-92C4-580956BF46C8}</Project>
+      <Name>busCostCentre</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busDataDownload\busDataDownload.csproj">
+      <Project>{49BBA33E-0B08-4679-876B-83111850B328}</Project>
+      <Name>busDataDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busDataUpload\busDataUpload.csproj">
+      <Project>{61F31560-785A-4FC0-9754-70E5ACA06D00}</Project>
+      <Name>busDataUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busDateLoad\busDateLoad.csproj">
+      <Project>{755FF2EF-A3C4-441A-B189-C863BC07144D}</Project>
+      <Name>busDateLoad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busDeduction\busDeduction.csproj">
+      <Project>{6BFD90AB-5E20-4DEF-AD04-3BB2A42B67B4}</Project>
+      <Name>busDeduction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEarning\busEarning.csproj">
+      <Project>{5092F03F-BF5C-46CF-81EB-A689F14A641E}</Project>
+      <Name>busEarning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEasyFile\busEasyFile.csproj">
+      <Project>{D319037F-F5A4-42A2-8355-570AE2F0389D}</Project>
+      <Name>busEasyFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeActivateSelection\busEmployeeActivateSelection.csproj">
+      <Project>{B6ED72DF-CA05-4A37-9578-7E52D0FCADED}</Project>
+      <Name>busEmployeeActivateSelection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeActivate\busEmployeeActivate.csproj">
+      <Project>{4420D03A-DC21-416B-9912-8007324C19B4}</Project>
+      <Name>busEmployeeActivate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeBalanceTakeOn\busEmployeeBalanceTakeOn.csproj">
+      <Project>{16CA998B-42EC-40E6-BB3C-59306D02F419}</Project>
+      <Name>busEmployeeBalanceTakeOn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeLeaveTakeOnActivate\busEmployeeLeaveTakeOnActivate.csproj">
+      <Project>{03201BB5-2A77-4987-893A-A494B2010080}</Project>
+      <Name>busEmployeeLeaveTakeOnActivate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeLeaveTakeOn\busEmployeeLeaveTakeOn.csproj">
+      <Project>{6EAB8A51-4F4F-4C3C-8CEE-47F6A9456B4F}</Project>
+      <Name>busEmployeeLeaveTakeOn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployeeRecover\busEmployeeRecover.csproj">
+      <Project>{3E6D6880-15DF-47D8-8ADA-C3AFAEB7DCE6}</Project>
+      <Name>busEmployeeRecover</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEmployee\busEmployee.csproj">
+      <Project>{7E699886-B6CE-4865-A40D-67F6E3C8A6FA}</Project>
+      <Name>busEmployee</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busEtiRun\busEtiRun.csproj">
+      <Project>{bec27a4a-427d-423d-9656-c09804a68491}</Project>
+      <Name>busEtiRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busFileDownload\busFileDownload.csproj">
+      <Project>{D9C4B52C-9122-49B2-ABEE-55F8AB964AA4}</Project>
+      <Name>busFileDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busFileUpload\busFileUpload.csproj">
+      <Project>{A03595E6-674C-409B-98D2-78252E4A835E}</Project>
+      <Name>busFileUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busFix\busFix.csproj">
+      <Project>{5B990392-DD09-4F60-858D-3DBCA09E815D}</Project>
+      <Name>busFix</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busLeaveAuthorisation\busLeaveAuthorisation.csproj">
+      <Project>{FAC48212-C6C3-4D2F-92EC-28982337BB7B}</Project>
+      <Name>busLeaveAuthorisation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busLeaveProcess\busLeaveProcess.csproj">
+      <Project>{9B5055C9-E2CC-413A-8D26-36967129691D}</Project>
+      <Name>busLeaveProcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busLeaveType\busLeaveType.csproj">
+      <Project>{7DC56F13-CD57-4BA5-BE3D-E47A6708E261}</Project>
+      <Name>busLeaveType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busLoadNewDemoRun\busLoadNewDemoRun.csproj">
+      <Project>{b0c599e7-03b7-493e-a04e-deeffc2f0e08}</Project>
+      <Name>busLoadNewDemoRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busNormalSickLeave\busNormalSickLeave.csproj">
+      <Project>{C17CAFC4-CA63-4E31-9BAE-9C6B82F8BAAB}</Project>
+      <Name>busNormalSickLeave</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busOccupationDepartmentLink\busOccupationDepartmentLink.csproj">
+      <Project>{276C74F0-6009-4E9A-9216-F91E75FF31F5}</Project>
+      <Name>busOccupationDepartmentLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busOccupationDepartment\busOccupationDepartment.csproj">
+      <Project>{128BEF04-D469-4E73-A6EB-8030C04AF73C}</Project>
+      <Name>busOccupationDepartment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busOpenPayrollRun\busOpenPayrollRun.csproj">
+      <Project>{8EB09CC9-01B7-4E62-9CC2-2D9FF292FB72}</Project>
+      <Name>busOpenPayrollRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPasswordChange\busPasswordChange.csproj">
+      <Project>{925CE865-94F2-4B88-BAE5-0B4303EFF8D2}</Project>
+      <Name>busPasswordChange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPasswordReset\busPasswordReset.csproj">
+      <Project>{65F77DE9-418E-4BDA-9B77-B3859AAC57BD}</Project>
+      <Name>busPasswordReset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPayrollAnalysis\busPayrollAnalysis.csproj">
+      <Project>{09B85BF2-42E3-423F-91EB-9D8D7A5BE368}</Project>
+      <Name>busPayrollAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPayrollLogon\busPayrollLogon.csproj">
+      <Project>{7D64CA57-02BE-4CEC-8766-7BD1B53E8A2D}</Project>
+      <Name>busPayrollLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPayrollMain\busPayrollMain.csproj">
+      <Project>{F522DFE4-BCAA-4893-8DBC-624F9B79C306}</Project>
+      <Name>busPayrollMain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPayrollRunFix\busPayrollRunFix.csproj">
+      <Project>{7E9136C8-3708-45CB-B5CA-E776D6D7F169}</Project>
+      <Name>busPayrollRunFix</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busPublicHoliday\busPublicHoliday.csproj">
+      <Project>{5F2F210D-E41A-48AF-A0A7-25E117FFE19D}</Project>
+      <Name>busPublicHoliday</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busResetEmployeeTakeOn\busResetEmployeeTakeOn.csproj">
+      <Project>{EDAC57F0-3B2B-4EE3-BF72-6B16959F5505}</Project>
+      <Name>busResetEmployeeTakeOn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRoster\busRoster.csproj">
+      <Project>{1f7ca900-0813-417c-be3a-8e573a8c6d80}</Project>
+      <Name>busRoster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRptEarningsDeductions\busRptEarningsDeductions.csproj">
+      <Project>{8DA5B9E2-89E5-4B85-B171-BE10660C0ADF}</Project>
+      <Name>busRptEarningsDeductions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRptEti\busRptEti.csproj">
+      <Project>{284b165e-0560-4eed-ae0c-c7f8c4c6bfe2}</Project>
+      <Name>busRptEti</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRptLeaveTimeSheet\busRptLeaveTimeSheet.csproj">
+      <Project>{B5E80D2F-7099-42D9-BFE6-7A440AB1A739}</Project>
+      <Name>busRptLeaveTimeSheet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRptLeave\busRptLeave.csproj">
+      <Project>{28FDD6FD-C505-44C1-A6D7-81176BB1E9C1}</Project>
+      <Name>busRptLeave</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRptPaySlip\busRptPaySlip.csproj">
+      <Project>{7538D95A-62AB-4849-B7D5-C50A85A9E0AF}</Project>
+      <Name>busRptPaySlip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRptTimeSheetTotals\busRptTimeSheetTotals.csproj">
+      <Project>{A5A8E513-27F8-4319-AD4B-A3B1DF968830}</Project>
+      <Name>busRptTimeSheetTotals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busRptTimeSheet\busRptTimeSheet.csproj">
+      <Project>{13FFF6D6-0D71-4F30-888D-45A11C94384A}</Project>
+      <Name>busRptTimeSheet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busSalaryWageIncrease\busSalaryWageIncrease.csproj">
+      <Project>{28088254-F5CD-4AE7-9A54-00BFCB0EC5B2}</Project>
+      <Name>busSalaryWageIncrease</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busShiftSchedule\busShiftSchedule.csproj">
+      <Project>{66c692d2-bb81-4737-8e12-f101e9ea6e7a}</Project>
+      <Name>busShiftSchedule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceAnalysis\busTimeAttendanceAnalysis.csproj">
+      <Project>{34CB4110-988D-42CC-97A1-C4B0614FC2AC}</Project>
+      <Name>busTimeAttendanceAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceLogon\busTimeAttendanceLogon.csproj">
+      <Project>{637F899E-8558-4F9A-B6CF-47203A0D867D}</Project>
+      <Name>busTimeAttendanceLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeAttendanceRun\busTimeAttendanceRun.csproj">
+      <Project>{713604F0-AE27-4E72-88DC-6BE13F7CFDC9}</Project>
+      <Name>busTimeAttendanceRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeSheetAuthorise\busTimeSheetAuthorise.csproj">
+      <Project>{D7F315AF-F14B-4F1B-A9BA-85FB82218430}</Project>
+      <Name>busTimeSheetAuthorise</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeSheetBatch\busTimeSheetBatch.csproj">
+      <Project>{D16212EB-23B7-4FF4-BD3A-27DFD266E85E}</Project>
+      <Name>busTimeSheetBatch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busTimeSheet\busTimeSheet.csproj">
+      <Project>{C2D4DADC-1F41-4F19-9DCF-0F82E0F4270A}</Project>
+      <Name>busTimeSheet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busUserEmployeeLink\busUserEmployeeLink.csproj">
+      <Project>{1E9B0417-BE77-4B67-8DD7-ADB1CF5B5FF2}</Project>
+      <Name>busUserEmployeeLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busUserMenuAccess\busUserMenuAccess.csproj">
+      <Project>{4ABBA5D1-C6FF-4F7B-BBE4-6EC088A3103B}</Project>
+      <Name>busUserMenuAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busUser\busUser.csproj">
+      <Project>{A8DC0C89-CB85-4DC0-B5BA-B11537898AEF}</Project>
+      <Name>busUser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\busWebDynamicServices\busWebDynamicServices.csproj">
+      <Project>{C3407AA6-E3C1-482A-9176-35077B451ADA}</Project>
+      <Name>busWebDynamicServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calender\Calender.csproj">
+      <Project>{306141B8-C426-453A-A6A7-1D08FC692EF8}</Project>
+      <Name>Calender</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChooseFingerprintReader\ChooseFingerprintReader.csproj">
+      <Project>{2cd39a5e-95f6-4271-83bc-5d898bf870e3}</Project>
+      <Name>ChooseFingerprintReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClosePayrollRun\ClosePayrollRun.csproj">
+      <Project>{505D39AE-44FC-4D78-B306-872C9411D02B}</Project>
+      <Name>ClosePayrollRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsDBConnectionObjects\clsDBConnectionObjects.csproj">
+      <Project>{A93C21F2-C5CE-4C5D-8BE3-0D9935AC7714}</Project>
+      <Name>clsDBConnectionObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsFixInteractPayrollClientDatabase\clsFixInteractPayrollClientDatabase.csproj">
+      <Project>{47c14b49-6fda-48c4-af1e-86c61bdbb915}</Project>
+      <Name>clsFixInteractPayrollClientDatabase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsInteractPayrollTriggers\clsInteractPayrollTriggers.csproj">
+      <Project>{55978962-FC59-402F-9284-CB6DCD1B2FAE}</Project>
+      <Name>clsInteractPayrollTriggers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsISClientUtilities\clsISClientUtilities.csproj">
+      <Project>{7A57341C-01D4-41ED-B0B8-D356F2573354}</Project>
+      <Name>clsISClientUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsISUtilities\clsISUtilities.csproj">
+      <Project>{9641E261-EC6D-4333-81EE-885A3C2207F7}</Project>
+      <Name>clsISUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsReadersToDp\clsReadersToDp.csproj">
+      <Project>{d4d63fb1-72f4-453f-8018-d99c58a75817}</Project>
+      <Name>clsReadersToDp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsTaxTableRead\clsTaxTableRead.csproj">
+      <Project>{7DB5E44C-11A3-47C5-8AFE-6DA59DC19ECE}</Project>
+      <Name>clsTaxTableRead</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsTax\clsTax.csproj">
+      <Project>{EE9C4AB7-9571-4416-8696-F5FD31E5EA09}</Project>
+      <Name>clsTax</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompanyPaymentOptions\CompanyPaymentOptions.csproj">
+      <Project>{1FC74C35-E6C5-4195-AE25-47910123133D}</Project>
+      <Name>CompanyPaymentOptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Company\Company.csproj">
+      <Project>{D8A632FA-9118-4A00-ACB2-33207DE1783A}</Project>
+      <Name>Company</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConvertEmployeeType\ConvertEmployeeType.csproj">
+      <Project>{c7261365-3c33-41f0-a700-42ce67534a10}</Project>
+      <Name>ConvertEmployeeType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CostCentre\CostCentre.csproj">
+      <Project>{BEA70C7E-2B9D-4771-8BB5-9084AC3F4E81}</Project>
+      <Name>CostCentre</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataDownload\DataDownload.csproj">
+      <Project>{CBED8556-2E28-43A4-BD4A-B619D745195F}</Project>
+      <Name>DataDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataUpload\DataUpload.csproj">
+      <Project>{AA3A3A00-9B9C-41A5-8CF0-6D8A94792153}</Project>
+      <Name>DataUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DateLoad\DateLoad.csproj">
+      <Project>{CA3108F6-41C3-4204-8165-91A3552E9F91}</Project>
+      <Name>DateLoad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Deduction\Deduction.csproj">
+      <Project>{3C599917-905C-4E85-819B-011B48415127}</Project>
+      <Name>Deduction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DownloadFiles\DownloadFiles.csproj">
+      <Project>{870B6226-EFD5-4FE6-A8F7-DC578AB007FE}</Project>
+      <Name>DownloadFiles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Earning\Earning.csproj">
+      <Project>{64B8ACB1-662F-4480-9EB0-2C6D3D0F81E8}</Project>
+      <Name>Earning</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyFile\EasyFile.csproj">
+      <Project>{8BE9620C-0BFC-436F-8976-3CFC3BC7DBD5}</Project>
+      <Name>EasyFile</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeActivateSelection\EmployeeActivateSelection.csproj">
+      <Project>{8CFB4E00-4ED0-4AD9-A809-4ED7AEA3F928}</Project>
+      <Name>EmployeeActivateSelection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeActivate\EmployeeActivate.csproj">
+      <Project>{4EB04C17-C217-4FF8-B04B-1908C42F3F90}</Project>
+      <Name>EmployeeActivate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeBalanceTakeOn\EmployeeBalanceTakeOn.csproj">
+      <Project>{F66DD8B7-00E9-490A-AE6D-CAAF0BE79439}</Project>
+      <Name>EmployeeBalanceTakeOn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeLeaveTakeOnActivate\EmployeeLeaveTakeOnActivate.csproj">
+      <Project>{03FEBE70-7A82-4B62-9F17-7207E8AE563C}</Project>
+      <Name>EmployeeLeaveTakeOnActivate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeLeaveTakeOn\EmployeeLeaveTakeOn.csproj">
+      <Project>{A1BF6A32-0B5A-46F7-B106-449F93945903}</Project>
+      <Name>EmployeeLeaveTakeOn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EmployeeRecover\EmployeeRecover.csproj">
+      <Project>{9ded3d33-b867-42eb-813d-1f743ffb7b5e}</Project>
+      <Name>EmployeeRecover</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Employee\Employee.csproj">
+      <Project>{DC107887-3CC4-40E9-B137-FDD5EADF2749}</Project>
+      <Name>Employee</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EtiRun\EtiRun.csproj">
+      <Project>{50598289-6f0d-4939-bee7-bd32111f42d8}</Project>
+      <Name>EtiRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileDownload\FileDownload.csproj">
+      <Project>{EC330A2B-BFB2-4F2C-8B05-63B91F12F64D}</Project>
+      <Name>FileDownload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FileUpload\FileUpload.csproj">
+      <Project>{CC7C6F73-E06C-47E0-8862-97F58DEDED8F}</Project>
+      <Name>FileUpload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fix\Fix.csproj">
+      <Project>{77FC8293-DC21-4A68-B838-846A60006C0C}</Project>
+      <Name>Fix</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeaveAuthorisation\LeaveAuthorisation.csproj">
+      <Project>{03FFB02D-ED3B-44CF-9820-D9AFD52FC77E}</Project>
+      <Name>LeaveAuthorisation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeaveProcess\LeaveProcess.csproj">
+      <Project>{8C36B20B-C080-4869-AE0E-AF313D153CEE}</Project>
+      <Name>LeaveProcess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LeaveType\LeaveType.csproj">
+      <Project>{4716E831-B218-4BC3-BA6F-E5D9012479F4}</Project>
+      <Name>LeaveType</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoadNewDemoRun\LoadNewDemoRun.csproj">
+      <Project>{7fe1ed96-ee7b-4320-a788-fcd6016993d0}</Project>
+      <Name>LoadNewDemoRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NormalSickLeave\NormalSickLeave.csproj">
+      <Project>{3E9DDE99-4510-4478-8104-2EB22C5FC403}</Project>
+      <Name>NormalSickLeave</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OccupationDepartmentLink\OccupationDepartmentLink.csproj">
+      <Project>{77FA02EA-3526-41BC-801D-F98BCD9CD5D2}</Project>
+      <Name>OccupationDepartmentLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OccupationDepartment\OccupationDepartment.csproj">
+      <Project>{71816A34-3879-4758-8EED-D571E8F2ABB4}</Project>
+      <Name>OccupationDepartment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OpenPayrollRun\OpenPayrollRun.csproj">
+      <Project>{A552E7E6-2E55-47C3-947D-CC08EF6D28C4}</Project>
+      <Name>OpenPayrollRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PasswordChange\PasswordChange.csproj">
+      <Project>{E6092E97-25C6-40FD-A5DA-FF4A9B12281E}</Project>
+      <Name>PasswordChange</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PasswordReset\PasswordReset.csproj">
+      <Project>{A5EBBF39-1B92-4717-9C9A-F161E0A5DC0C}</Project>
+      <Name>PasswordReset</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayrollAnalysis\PayrollAnalysis.csproj">
+      <Project>{ECBB00B9-2539-416C-BDF4-803C7086DD64}</Project>
+      <Name>PayrollAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayrollLogon\PayrollLogon.csproj">
+      <Project>{BE163E5D-CCE3-446A-85E8-FC52485321FF}</Project>
+      <Name>PayrollLogon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayrollMain\PayrollMain.csproj">
+      <Project>{348D1163-C901-41F8-811B-CF8B5229A29E}</Project>
+      <Name>PayrollMain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PayrollRunFix\PayrollRunFix.csproj">
+      <Project>{0E6E99E2-A272-4A3E-A269-257736ACC9D6}</Project>
+      <Name>PayrollRunFix</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PublicHoliday\PublicHoliday.csproj">
+      <Project>{F534DDDE-E78A-4ACF-8C28-746A87670B3E}</Project>
+      <Name>PublicHoliday</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ResetEmployeeTakeOn\ResetEmployeeTakeOn.csproj">
+      <Project>{92FD29C8-6F9E-4949-B0A5-10250B1538C1}</Project>
+      <Name>ResetEmployeeTakeOn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Roster\Roster.csproj">
+      <Project>{0a5b4608-ec52-4a66-a6d2-289bc518a045}</Project>
+      <Name>Roster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RptEarningsDeductions\RptEarningsDeductions.csproj">
+      <Project>{F2EEC4A9-73F6-482D-8BF1-F841B1EBB2AD}</Project>
+      <Name>RptEarningsDeductions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RptEti\RptEti.csproj">
+      <Project>{aa25f708-3e55-4926-aa3c-85779e4f95de}</Project>
+      <Name>RptEti</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RptLeaveTimeSheet\RptLeaveTimeSheet.csproj">
+      <Project>{2213F9E2-A774-4358-9FB8-90004F3E58BD}</Project>
+      <Name>RptLeaveTimeSheet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RptLeave\RptLeave.csproj">
+      <Project>{F7BD285F-2A84-4F44-9298-8BE8367F79D2}</Project>
+      <Name>RptLeave</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RptPaySlip\RptPaySlip.csproj">
+      <Project>{3C456AFD-9715-4459-BA4A-9E93CE19BAC2}</Project>
+      <Name>RptPaySlip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RptTimeSheetTotals\RptTimeSheetTotals.csproj">
+      <Project>{B01FD655-82F9-46BF-9038-B6028B11F5B4}</Project>
+      <Name>RptTimeSheetTotals</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RptTimeSheet\RptTimeSheet.csproj">
+      <Project>{EB17E14F-4DAB-4107-AE1F-8054CD109418}</Project>
+      <Name>RptTimeSheet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalaryWageIncrease\SalaryWageIncrease.csproj">
+      <Project>{7A141D91-F1FE-45F0-A7D2-C90BB6F8E2E3}</Project>
+      <Name>SalaryWageIncrease</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SetupLocalWebServer\SetupLocalWebServer.csproj">
+      <Project>{C4477390-666C-4F3A-895A-E2F1711B4FFA}</Project>
+      <Name>SetupLocalWebServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShiftSchedule\ShiftSchedule.csproj">
+      <Project>{a1a787f2-f6f7-4565-a70a-0e3b8fac7db8}</Project>
+      <Name>ShiftSchedule</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tax\Tax.csproj">
+      <Project>{6BA7773D-44EB-4205-BE60-6EAEA3548BD8}</Project>
+      <Name>Tax</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeAttendanceAnalysis\TimeAttendanceAnalysis.csproj">
+      <Project>{587F2F6D-5B25-4758-A5E0-4F2DFED8CB3B}</Project>
+      <Name>TimeAttendanceAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeAttendanceRun\TimeAttendanceRun.csproj">
+      <Project>{8EC7922B-3D6F-4F0A-A38F-4E75DC6D66BC}</Project>
+      <Name>TimeAttendanceRun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeSheetAuthorise\TimeSheetAuthorise.csproj">
+      <Project>{0442D822-3081-49D4-9A96-A398D6B9E13D}</Project>
+      <Name>TimeSheetAuthorise</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeSheetBatch\TimeSheetBatch.csproj">
+      <Project>{A93B95D6-9887-4E29-9098-24E1586ECF1F}</Project>
+      <Name>TimeSheetBatch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TimeSheet\TimeSheet.csproj">
+      <Project>{19806D9B-0BB9-477D-A1D8-BB14F3620F34}</Project>
+      <Name>TimeSheet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserEmployeeLink\UserEmployeeLink.csproj">
+      <Project>{092E0D47-1C15-4972-9FD0-C4A09F55DF2F}</Project>
+      <Name>UserEmployeeLink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserMenuAccess\UserMenuAccess.csproj">
+      <Project>{4824976A-A768-47B6-AF66-8A85BAB1EEEA}</Project>
+      <Name>UserMenuAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\User\User.csproj">
+      <Project>{19A578CD-62B1-4B60-9E41-E0B9B7E13A2C}</Project>
+      <Name>User</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
